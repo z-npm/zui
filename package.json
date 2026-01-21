@@ -1,0 +1,105 @@
+{
+  "name": "@o.z/zui",
+  "version": "0.1.0",
+  "description": "Next-generation Web Component framework leveraging TypeScript Stage 3 standard decorators.",
+  "homepage": "https://github.com/z-npm/zui#readme",
+  "docs": "https://github.com/z-npm/zui#readme",
+  "bugs": {
+    "url": "https://github.com/z-npm/zui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/z-npm/zui.git"
+  },
+  "author": {
+    "name": "Zero Red",
+    "email": "github@zero-red.dev",
+    "url": "https://github.com/zero-red-dev"
+  },
+  "maintainers": [
+    {
+      "name": "Zero Red",
+      "email": "github@zero-red.dev",
+      "url": "https://github.com/zero-red-dev"
+    }
+  ],
+  "license": "GPL-3.0-only",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/zero-red-dev"
+  },
+  "social": {
+    "tiktok": "@zero.red.dev",
+    "github": "zero-red-dev"
+  },
+  "keywords": [
+    "web-components",
+    "custom-elements",
+    "typescript",
+    "decorators",
+    "stage-3-decorators",
+    "reactive",
+    "shadow-dom",
+    "dom-abstraction",
+    "frontend",
+    "framework",
+    "boilerplate-free",
+    "typed-html",
+    "customized-built-in"
+  ],
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.9",
+    "@z-code/vite-plugin-swc": "^0.5.5",
+    "glob": "^13.0.0",
+    "sass": "^1.97.2",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1",
+    "vite-plugin-dts": "^4.5.4",
+    "vite-plugin-lib-inject-css": "^2.2.2"
+  },
+  "types": "./dist/index.d.ts",
+  "module": "./dist/index.js",
+  "main": "./dist/index.cjs",
+  "exports": {
+    "./utilities": {
+      "types": "./dist/utilities.d.ts",
+      "import": "./dist/utilities.js",
+      "require": "./dist/utilities.cjs"
+    },
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./dom": {
+      "types": "./dist/dom.d.ts",
+      "import": "./dist/dom.js",
+      "require": "./dist/dom.cjs"
+    },
+    "./decorators": {
+      "types": "./dist/decorators.d.ts",
+      "import": "./dist/decorators.js",
+      "require": "./dist/decorators.cjs"
+    }
+  },
+  "dependencies": {
+    "csstype": "^3.2.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "packageManager": "yarn@4.12.0"
+}
