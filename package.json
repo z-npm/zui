@@ -1,6 +1,6 @@
 {
   "name": "@o.z/zui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Next-generation Web Component framework leveraging TypeScript Stage 3 standard decorators.",
   "homepage": "https://github.com/z-npm/zui#readme",
   "docs": "https://github.com/z-npm/zui#readme",
@@ -56,10 +56,10 @@
     "build": "tsc && vite build"
   },
   "devDependencies": {
-    "@types/node": "^25.0.9",
+    "@types/node": "^25.0.10",
     "@z-code/vite-plugin-swc": "^0.5.5",
     "glob": "^13.0.0",
-    "sass": "^1.97.2",
+    "sass": "^1.97.3",
     "typescript": "^5.9.3",
     "vite": "^7.3.1",
     "vite-plugin-dts": "^4.5.4",

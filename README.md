@@ -1,36 +1,28 @@
 # ZUI Framework ⚡
 
-[![npm](https://img.shields.io/npm/v/@o.z/zui)](https://www.npmjs.com/package/@o.z/zui) [![license](https://img.shields.io/npm/l/@o.z/zui)](https://www.npmjs.com/package/@o.z/zui)
+[![npm version](https://img.shields.io/npm/v/@o.z/zui?style=flat-square)](https://www.npmjs.com/package/@o.z/zui)
+[![license](https://img.shields.io/npm/l/@o.z/zui?style=flat-square)](https://www.npmjs.com/package/@o.z/zui)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-Compatible-646CFF?style=flat-square&logo=vite)](https://vitejs.dev/)
 
-### Next-Generation Web Components with TypeScript Stage 3 Decorators
-
-**ZUI** is a lightweight, type-safe abstraction layer for building native Web Components. It leverages the power of **TypeScript Stage 3 Decorators** (`accessor`) to remove boilerplate, manage reactivity, and streamline DOM interactions, all while staying close to the metal of the browser.
+**ZUI** is a next-generation, lightweight abstraction layer for building native Web Components. It leverages **TypeScript Stage 3 Decorators** to eliminate boilerplate, manage reactive state, and streamline DOM interactions while staying close to the metal of the browser.
 
 ---
 
 ## 🚀 Why ZUI?
 
-Building raw Web Components requires repetitive boilerplate: `observedAttributes`, `attributeChangedCallback`, `shadowRoot` management, and manual event dispatching.
+Standard Web Components require significant boilerplate: managing `observedAttributes`, manually handling `shadowRoot`, and verbose event dispatching. **ZUI** solves this with a declarative, type-safe API:
 
-**ZUI** solves this by offering a declarative API for:
-* **Reactive State:** Auto-updating views when properties change.
-* **Zero-Boilerplate Refs:** Type-safe access to DOM elements.
-* **Magic Event Emitters:** Auto-generated dispatch methods.
-* **Customized Built-ins:** Seamlessly extending native elements like `HTMLDivElement`.
-
----
-
-## 📦 Features
-
-* **Stage 3 Decorators:** Built for the future of TypeScript.
-* **Reactivity System:** Simple `accessor` pattern with lifecycle hooks (e.g., `countUpdate`).
-* **Scoped Styling:** Automatic Shadow DOM or scoped style injection.
-* **Vite Compatible:** Designed to work with `.html?raw` and `.scss?inline` imports.
-* **Type Safety:** First-class TypeScript support for Props and Events.
+* **⚡ Stage 3 Decorators:** Built for modern TypeScript, utilizing the standard `accessor` pattern.
+* **🔄 Reactive State:** Properties automatically trigger view updates and lifecycle hooks.
+* **🎯 Zero-Boilerplate Refs:** Type-safe DOM element caching without manual `querySelector` calls.
+* **📡 Magic Event Emitters:** Auto-generated, strictly typed event dispatch methods.
+* **🎨 Scoped Styling:** Seamless integration with standard Shadow DOM or scoped styles.
+* **🛠 Customized Built-ins:** First-class support for extending native elements (e.g., `<div is="my-component">`).
 
 ---
 
-## Installation
+## 📦 Installation
 
 ```bash
 npm install @o.z/zui
@@ -44,9 +36,9 @@ pnpm add @o.z/zui
 
 ## 🛠️ Usage Example
 
-Here is a complete example of a **Reactive Counter** component extending a native `div`.
+ZUI works best with Vite's string imports for HTML and CSS. Below is a complete example of a **Reactive Counter** that extends a native `div`. 
 
-### 1. Define the Component
+### 1. The Component (`counter.ts`)
 
 ```typescript
 import { defineElement, event, property, ref } from "@o.z/zui";
@@ -57,75 +49,82 @@ import cssStr from "./counter.scss?inline";
   tagName: "my-counter",
   html: htmlStr,
   css: cssStr,
-  options: { extends: 'div' } // Extends native DIV
+  options: { extends: 'div' } // Extends native HTMLDivElement
 })
 export class Counter extends HTMLDivElement {
   
-  // 1. Reactive State
+  // 1. Reactive State: Auto-observes attributes and updates
   @property()
-  accessor count: number = 0;
+  accessor count = 0;
 
-  // 2. DOM References (No more querySelector in methods)
-  @ref(selector: ".counter")
+  // 2. DOM References: Selects elements from the template
+  @ref(".counter")
   counterRef!: HTMLDivElement;
 
-  @ref(selector: ".increase")
+  @ref(".increase")
   increaseRef!: HTMLButtonElement;
 
-  @ref(selector: ".decrease")
+  @ref(".decrease")
   decreaseRef!: HTMLButtonElement;
 
-  // 3. Event Definition
+  // 3. Event Emitter: Generates 'emitCounterClick' method
   @event({ name: "counter-click" })
   counterClick!: CustomEvent<any>;
 
   connected() {
-    this.increaseRef.addEventListener("click", () => this.handleUpdate(1));
-    this.decreaseRef.addEventListener("click", () => this.handleUpdate(-1));
+    // 'connected' is a ZUI shorthand for connectedCallback
+    this.increaseRef.addEventListener("click", this.incHandler);
+    this.decreaseRef.addEventListener("click", this.decHandler);
   }
 
-  handleUpdate(delta: number) {
-    // Magic method generated by @event decorator
-    (this as any).emitCounterClick({ count: delta });
+  disconnected() {
+    this.increaseRef.removeEventListener("click", this.incHandler);
+    this.decreaseRef.removeEventListener("click", this.decHandler);
   }
 
-  // 4. Reactive Hook: Called automatically when 'count' changes
+  incHandler = (e: MouseEvent) => {
+    // Magic method generated by @event
+    (this as any).emitCounterClick({ e, count: 1 });
+  }
+
+  decHandler = (e: MouseEvent) => {
+    (this as any).emitCounterClick({ e, count: -1 });
+  }
+
+  // 4. Lifecycle Hook: Called automatically when 'count' changes
   countUpdate(_oldVal: number, newVal: number) {
     this.counterRef.innerHTML = newVal.toString();
   }
 }
 ```
 
-### 2. The Template & Styles
+### 2. The Template (`counter.html`)
 
-**Counter.html**
 ```html
 <div class="container">
-  <div part="counter-text" class="counter">0</div>
-  <button class="decrease"><slot name="decrease"></slot></button>
-  <button class="increase"><slot name="increase"></slot></button>
+  <div class="counter">0</div>
+  <button class="increase">+</button>
+  <button class="decrease">-</button>
 </div>
 ```
 
-### 3. Implementation in DOM
+### 3. Usage in HTML
 
-Because ZUI supports **Customized Built-in Elements**, you can use the `is` attribute to enhance standard HTML tags.
+Because ZUI supports **Customized Built-in Elements**, you can enhance standard tags:
 
 ```html
-<div id="counter" is="my-counter">
-  <span slot="increase">+1</span>
-  <span slot="decrease">-1</span>
-</div>
-```
+<div id="counter" is="my-counter"></div>
 
-```typescript
-// main.ts
-const counterEl = document.querySelector<Counter>("#counter")!;
-
-// Listen to custom events
-counterEl.addEventListener("counter-click", (e: any) => {
-  counterEl.count += e.detail.value.count;
-});
+<script type="module">
+  import "./counter"; 
+  
+  const el = document.querySelector("#counter");
+  
+  // Listen to the strongly typed custom event
+  el.addEventListener("counter-click", (e) => {
+    el.count += e.detail.value.count;
+  });
+</script>
 ```
 
 ---
@@ -133,35 +132,49 @@ counterEl.addEventListener("counter-click", (e: any) => {
 ## 📚 API Reference
 
 ### `@defineElement(config)`
-Class decorator that registers the custom element.
-* `tagName`: The kebab-case tag name.
-* `html`: Raw HTML string (Shadow DOM content).
-* `css`: Raw CSS/SCSS string.
-* `options`: Standard `ElementDefinitionOptions` (e.g., `{ extends: 'div' }`).
+Class decorator to register the custom element.
 
-### `@property()`
-Property decorator applied to an `accessor`.
-* Automatically observes attributes.
-* Triggers a lifecycle hook named `[propertyName]Update(oldVal, newVal)` when changed.
-* Handles type conversion (String to Number/Boolean).
+* **tagName** `string`: The kebab-case tag name (e.g., `my-counter`).
+* **html** `string`: Raw HTML string for the Shadow DOM.
+* **css** `string`: (Optional) Raw CSS string.
+* **options** `ElementDefinitionOptions`: (Optional) Used for `extends` (e.g., `{ extends: 'div' }`).
+
+### `@property(options)`
+Decorator for class accessors. It handles attribute observation and type conversion.
+
+* **type**: `"string" | "number" | "boolean"` (Auto-inferred from initial value if omitted).
+* **name**: Attribute name (defaults to kebab-case of property name).
+* **Lifecycle Hook**: When `myProp` changes, ZUI looks for a method named `myPropUpdate(oldVal, newVal)` and calls it.
 
 ### `@ref(selector)`
-Cache DOM queries to elements within your component's template.
-* `selector`: The CSS selector to find the element.
-* Eliminates repetitive `this.shadowRoot.querySelector` calls.
+Field decorator to cache DOM queries.
 
-### `@event({ name })`
-Generates event emitters.
-* Creates a generic method `emit[Name]` on the instance (e.g., `emitCounterClick`).
-* Payloads passed to the emitter are available in `event.detail.value`.
+* **selector** `string`: The CSS selector to find the element within the component's Shadow Root.
+* Populates the property automatically after the component connects.
+
+### `@event(config)`
+Field decorator to generate event emitters.
+
+* **name** `string`: The name of the custom event to dispatch.
+* **Generates**: A method on the instance named `emit[PropertyName capitalized]`.
+* **Payload**: Arguments passed to the emit method are available in `event.detail.value`.
 
 ---
 
-## 💻 Tech Stack
+## 💻 Development
 
-* **TypeScript (5.0+)**: Leveraging Stage 3 Decorators.
-* **Vite**: For blazing fast development and asset handling.
-* **SCSS**: For structured, nested styling.
+This project uses **Vite** and **TypeScript**.
+
+```bash
+# Install dependencies
+yarn install
+
+# Start development server
+yarn dev
+
+# Build the library
+yarn build
+```
 
 ---
 
