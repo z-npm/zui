@@ -1,6 +1,9 @@
-import { defineElement, event, property, ref } from "../../lib"
+import { defineElement, event, property, ref, EventEmitter, Zui } from "../../lib"
 import htmlStr from "./counter.html?raw"
 import cssStr from "./counter.scss?inline"
+
+
+export type CounterClickEvent = { count: number; e?: MouseEvent }
 
 @defineElement({
   tagName: "my-counter",
@@ -8,7 +11,7 @@ import cssStr from "./counter.scss?inline"
   css: cssStr,
   options: { extends: 'div' }
 })
-export class Counter extends HTMLDivElement {
+export class Counter extends Zui(HTMLDivElement) {
   @property()
   accessor zName = "zero"
 
@@ -27,10 +30,8 @@ export class Counter extends HTMLDivElement {
   @ref(".decrease")
   decreaseRef!: HTMLButtonElement
 
-  @event({
-    name: "counter-click",
-  })
-  counterClick!: CustomEvent<any>
+  @event()
+  counterClick!: EventEmitter<CounterClickEvent>
 
   constructor() {
     super()
@@ -47,11 +48,11 @@ export class Counter extends HTMLDivElement {
   }
 
   incHandler = (e: MouseEvent) => {
-    (this as any)?.emitCounterClick({ e, count: 1 })
+    this.counterClick.emit({ e, count: 1 })
   }
 
   decHandler = (e: MouseEvent) => {
-    (this as any)?.emitCounterClick({ e, count: -1 })
+    this.counterClick.emit({ e, count: -1 })
   }
 
   countUpdate(_oldCount: number, newCount: number) {

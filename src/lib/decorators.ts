@@ -1,4 +1,4 @@
-import { toKebabCase } from "./utilities";
+import { EventEmitter, toKebabCase } from "./utilities";
 
 const OBSERVED_ATTRS_KEY = Symbol('observedAttributes');
 
@@ -172,31 +172,21 @@ export const ref = (selector: string) => {
 }
 
 interface EventProp {
-  name: string
-  init?: any
-  emitName?: string
+  name?: string
 }
 
-export const event = ({ name, init, emitName }: EventProp) => {
-  return <T extends HTMLElement, V extends CustomEvent>(_target: undefined, context: ClassFieldDecoratorContext<T, V>) => {
-    init ??= {}
-    context.addInitializer(function () {
+export const event = (options: EventProp = {}) => {
+  return <T extends HTMLElement, V>(
+    _target: undefined,
+    context: ClassFieldDecoratorContext<T, EventEmitter<V>>
+  ) => {
+    const eventName = options.name ?? toKebabCase(context.name.toString());
+
+    context.addInitializer(function (this: T) {
       queueMicrotask(() => {
-        const prototype = Object.getPrototypeOf(this)
-        const methodName = emitName ?? `emit${String(context.name).charAt(0).toUpperCase() + String(context.name).slice(1)}`;
-
-        (this as any)[context.name] = new CustomEvent(
-          name, { detail: { value: init } })
-
-        if (!prototype[methodName]) {
-          prototype[methodName] = function (value: any) {
-
-            (this as any)[context.name].detail.value = value
-            this.dispatchEvent((this as any)[context.name])
-          };
-        }
+        (this as any)[context.name] = new EventEmitter<V>(this, eventName);
       })
-    })
-  }
-}
+    });
+  };
+};
 
