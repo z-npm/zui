@@ -1,6 +1,6 @@
 {
   "name": "@o.z/zui",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Next-generation Web Component framework leveraging TypeScript Stage 3 standard decorators.",
   "homepage": "https://github.com/z-npm/zui#readme",
   "docs": "https://github.com/z-npm/zui#readme",
@@ -73,6 +73,11 @@
       "types": "./dist/utilities.d.ts",
       "import": "./dist/utilities.js",
       "require": "./dist/utilities.cjs"
+    },
+    "./types": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/types.js",
+      "require": "./dist/types.cjs"
     },
     ".": {
       "types": "./dist/index.d.ts",

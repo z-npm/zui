@@ -59,8 +59,8 @@ export class Counter extends Zui(HTMLDivElement) {
     this.counterRef.innerHTML = newCount.toString()
   }
 
-  // attributyyeChanged(attributeName: string, oldValue: string, newValue: string) {
-  //   console.log(attributeName, oldValue, newValue);
-  // }
+  attributeChanged(attributeName: string, oldValue: string, newValue: string) {
+    console.log(attributeName, oldValue, newValue);
+  }
 }
 

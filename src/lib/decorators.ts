@@ -1,17 +1,18 @@
-import { EventEmitter, toKebabCase } from "./utilities";
+import { EventEmitter, ZuiComponent } from "./types";
+import { toKebabCase } from "./utilities";
 
 const OBSERVED_ATTRS_KEY = Symbol('observedAttributes');
 
-const callFun = (attribute: PropertyProp | undefined, oldValue: any, newValue: any, bindThis: any) => {
+const callFun = (attribute: PropertyProp | undefined, oldValue: unknown, newValue: unknown, zuiThis: ZuiComponent) => {
   if (attribute) {
     const funName = attribute.callbackName!
-    if (funName in bindThis) {
+    if (funName in zuiThis) {
       if (attribute.type === "string") {
-        bindThis[funName](oldValue, newValue);
+        zuiThis[funName](oldValue, newValue);
       } else if (attribute.type === "number") {
-        bindThis[funName](+oldValue, +newValue);
+        zuiThis[funName](+(oldValue as string), +(newValue as string));
       } else if (attribute.type === "boolean") {
-        bindThis[funName](
+        zuiThis[funName](
           typeof oldValue === "string" ? oldValue === "" || String(oldValue).toLowerCase() === "true" : Boolean(oldValue),
           typeof newValue === "string" ? newValue === "" || String(newValue).toLowerCase() === "true" : Boolean(newValue)
         );
@@ -20,8 +21,8 @@ const callFun = (attribute: PropertyProp | undefined, oldValue: any, newValue: a
   }
 }
 
-const getConvertor = ({ type, name }: PropertyProp, bindThis: any): number | string | boolean | undefined => {
-  const value = bindThis.getAttribute(name)
+const getConvertor = ({ type, name }: PropertyProp, zuiThis: ZuiComponent): number | string | boolean | undefined => {
+  const value = zuiThis.getAttribute(name!)
   if (value !== undefined && value !== null) {
     if (type === "number")
       return +value
@@ -64,13 +65,15 @@ export const defineElement = ({ tagName, html, css = "", options }: DefineElemen
 
       connectedCallback() {
         queueMicrotask(() => {
-          (this as any)?.["connected"]()
+          const zuiThis = this as unknown as ZuiComponent
+          zuiThis.connected?.()
         })
       }
 
       disconnectedCallback() {
         queueMicrotask(() => {
-          (this as any)?.["disconnected"]()
+          const zuiThis = this as unknown as ZuiComponent
+          zuiThis.disconnected?.()
         })
       }
 
@@ -79,8 +82,9 @@ export const defineElement = ({ tagName, html, css = "", options }: DefineElemen
         oldValue: string,
         newValue: string,
       ) {
+        const zuiThis = this as unknown as ZuiComponent
         if (oldValue !== newValue) {
-          (this as any)?.["attributyyeChanged"]?.(attributeName, oldValue, newValue)
+          zuiThis.attributeChanged?.(attributeName, oldValue, newValue)
         }
 
         if (oldValue !== newValue) {
@@ -88,7 +92,7 @@ export const defineElement = ({ tagName, html, css = "", options }: DefineElemen
             attributes.find(i => i.name === attributeName),
             oldValue,
             newValue,
-            this)
+            zuiThis)
         }
       }
     };
@@ -125,36 +129,39 @@ export const property = ({ type, name, callbackName }: PropertyProp = {}) => {
       init(this: T, initialValue: V): V {
         attribute.type = type ?? typeof initialValue as any
 
-        this.setAttribute(attribute.name!, String(initialValue));
+        const zuiThis = this as unknown as ZuiComponent
+        zuiThis.setAttribute(attribute.name!, String(initialValue));
 
         queueMicrotask(() => {
           callFun(
             attribute,
             initialValue,
             initialValue,
-            this)
+            zuiThis)
         });
 
         return initialValue;
       },
       get: function (this: T): V {
-        return getConvertor(attribute, this) as V
+        const zuiThis = this as unknown as ZuiComponent
+        return getConvertor(attribute, zuiThis) as V
       },
       set: function (this: T, value: V) {
         queueMicrotask(() => {
-          const oldValue = getConvertor(attribute, this)
+          const zuiThis = this as unknown as ZuiComponent
+          const oldValue = getConvertor(attribute, zuiThis)
           if (attribute.type === "string" || attribute.type === "number") {
-            this.setAttribute(attributName, String(value))
+            zuiThis.setAttribute(attributName, String(value))
           } else if (attribute.type === "boolean") {
-            this.setAttribute(attributName, value ? "true" : "false")
+            zuiThis.setAttribute(attributName, value ? "true" : "false")
           }
           else throw `Only accept type of "string", "number", "boolean"`
           if (oldValue !== value)
             callFun(
               attribute,
               oldValue,
-              value as any,
-              this)
+              value,
+              zuiThis)
         })
       }
     }
@@ -165,7 +172,8 @@ export const ref = (selector: string) => {
   return <T extends HTMLElement, V extends HTMLElement>(_target: undefined, context: ClassFieldDecoratorContext<T, V>) => {
     context.addInitializer(function () {
       queueMicrotask(() => {
-        (this as any)[context.name] = (this as any).shadowRoot.querySelector(selector)!
+        const zuiThis = this as unknown as ZuiComponent
+        zuiThis[context.name.toString()] = zuiThis.shadowRoot!.querySelector(selector)!
       })
     })
   }
@@ -184,7 +192,8 @@ export const event = (options: EventProp = {}) => {
 
     context.addInitializer(function (this: T) {
       queueMicrotask(() => {
-        (this as any)[context.name] = new EventEmitter<V>(this, eventName);
+        const zuiThis = this as unknown as ZuiComponent
+        zuiThis[context.name.toString()] = new EventEmitter<V>(zuiThis, eventName);
       })
     });
   };
