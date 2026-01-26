@@ -13,6 +13,12 @@
   grid-template-columns: 1fr 1fr;
 }
 
+.history {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: #666;
+}
+
 .counter {
   display: flex;
   justify-content: center;

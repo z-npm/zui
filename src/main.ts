@@ -16,3 +16,12 @@ counterRef.addEventListener("counter-click", (e: CustomEvent<{ value: CounterCli
 
 console.log(counterRef.count);
 
+
+setTimeout(() => {
+  counterRef.history.push(64)
+}, 3000);
+
+
+setTimeout(() => {
+  counterRef.history[1]++
+}, 5001);

@@ -1,4 +1,4 @@
-import { defineElement, event, property, ref, EventEmitter, Zui } from "../../lib"
+import { defineElement, event, property, ref, EventEmitter, Zui, state } from "../../lib"
 import htmlStr from "./counter.html?raw"
 import cssStr from "./counter.scss?inline"
 
@@ -21,8 +21,14 @@ export class Counter extends Zui(HTMLDivElement) {
   @property()
   accessor isGood = true
 
+  @state()
+  accessor history: number[] = [0, 43]
+
   @ref(".counter")
   counterRef!: HTMLDivElement
+
+  @ref(".history-text")
+  historyRef!: HTMLSpanElement
 
   @ref(".increase")
   increaseRef!: HTMLButtonElement
@@ -57,6 +63,10 @@ export class Counter extends Zui(HTMLDivElement) {
 
   countUpdate(_oldCount: number, newCount: number) {
     this.counterRef.innerHTML = newCount.toString()
+  }
+
+  historyUpdate(_oldHist: number[], newHist: number[]) {
+    this.historyRef.textContent = newHist.slice(-5).join(", ")
   }
 
   attributeChanged(attributeName: string, oldValue: string, newValue: string) {

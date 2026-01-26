@@ -1,5 +1,6 @@
+import { SafeHTML } from "./html";
 import { EventEmitter, ZuiComponent } from "./types";
-import { toKebabCase } from "./utilities";
+import { makeReactive, toKebabCase } from "./utilities";
 
 const OBSERVED_ATTRS_KEY = Symbol('observedAttributes');
 
@@ -37,7 +38,7 @@ const getConvertor = ({ type, name }: PropertyProp, zuiThis: ZuiComponent): numb
 
 export interface DefineElementProp {
   tagName: string
-  html: string
+  html: string | SafeHTML
   css?: string
   options?: ElementDefinitionOptions
 }
@@ -48,10 +49,12 @@ export const defineElement = ({ tagName, html, css = "", options }: DefineElemen
     context: ClassDecoratorContext<T>
   ) => {
     const attributes = context.metadata![OBSERVED_ATTRS_KEY] as PropertyProp[]
-    if (!html) throw "Html is empty!"
+    const htmlString = html instanceof SafeHTML ? html.value : html;
+
+    if (!htmlString) throw "Html is empty!"
 
     const template = document.createElement("template")
-    template.innerHTML = `<style>${css}</style>${html}`
+    template.innerHTML = `<style>${css}</style>${htmlString}`
 
     const NewClass = class extends originalClass {
       shadowRoot: ShadowRoot
@@ -167,6 +170,69 @@ export const property = ({ type, name, callbackName }: PropertyProp = {}) => {
     }
   };
 }
+
+export interface StateOptions {
+  callbackName?: string
+}
+
+/**
+ * Decorator for internal reactive state.
+ * Triggers component updates but does NOT reflect to DOM attributes.
+ * Useful for Objects, Arrays, or private data.
+ */
+export const state = ({ callbackName }: StateOptions = {}) => {
+  return <T extends HTMLElement, V>(
+    accessor: { get: (this: T) => V, set: (this: T, value: V) => void },
+    context: ClassAccessorDecoratorContext<T, V>
+  ) => {
+    const propName = context.name.toString();
+    const updateMethodName = callbackName ?? `${propName}Update`;
+
+    return {
+      init(this: T, initialValue: V): V {
+        const zuiThis = this as unknown as ZuiComponent;
+
+        const triggerUpdate = () => {
+          queueMicrotask(() => {
+            if (typeof zuiThis[updateMethodName] === 'function') {
+              zuiThis[updateMethodName](initialValue, initialValue);
+            }
+          });
+        };
+
+        let finalValue = initialValue;
+        if (initialValue && typeof initialValue === 'object') {
+          finalValue = makeReactive(initialValue as object, triggerUpdate) as V;
+        }
+
+        triggerUpdate();
+        return finalValue;
+      },
+      get(this: T): V {
+        return accessor.get.call(this);
+      },
+      set(this: T, newValue: V) {
+        const zuiThis = this as unknown as ZuiComponent;
+
+        const triggerUpdate = () => {
+          queueMicrotask(() => {
+            if (typeof zuiThis[updateMethodName] === 'function') {
+              zuiThis[updateMethodName](newValue, newValue);
+            }
+          });
+        };
+
+        let finalValue = newValue;
+        if (newValue && typeof newValue === 'object') {
+          finalValue = makeReactive(newValue as object, triggerUpdate) as V;
+        }
+
+        accessor.set.call(this, finalValue);
+        triggerUpdate();
+      }
+    };
+  };
+};
 
 export const ref = (selector: string) => {
   return <T extends HTMLElement, V extends HTMLElement>(_target: undefined, context: ClassFieldDecoratorContext<T, V>) => {

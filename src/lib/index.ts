@@ -4,6 +4,7 @@ export * from "./utilities"
 export * from "./decorators"
 export * from "./dom"
 export * from "./types.ts"
+export * from "./html.ts"
 
 type InferEventDetail<T, K extends keyof T> = T[K] extends EventEmitter<infer P> ? P : never;
 
