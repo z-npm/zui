@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vitest/config'
 import dts from "vite-plugin-dts"
 import { libInjectCss } from "vite-plugin-lib-inject-css"
 import swc from "@z-code/vite-plugin-swc"
@@ -14,14 +14,16 @@ const scssEntries = Object.fromEntries(
 );
 
 const tsEntries = Object.fromEntries(
-  glob.sync('src/lib/**/*.{ts,tsx,js,jsx}', {
-    ignore: ['src/lib/**/*.d.ts',
-      'src/lib/**/*.test.ts',
-      'src/lib/**/*.test.tsx',
-      'src/lib/**/*.test.js',
-      'src/lib/**/*.test.jsx']
+  glob.sync('src/lib/**/*.{ts,tsx, js, jsx}', {
+    ignore: [
+      '**/*.d.ts',
+      '**/*.test.ts',
+      '**/*.test.tsx',
+      '**/*.test.js',
+      '**/*.test.jsx'
+    ]
   }).map(file => [
-    relative('src/lib', file).slice(0, -extname(file).length),
+    relative('src/lib', file).replace(/\.tsx?$/, ''),
     resolve(__dirname, file)
   ])
 );
@@ -92,12 +94,23 @@ export default defineConfig({
     swc(),
     libInjectCss(),
     dts({
-      exclude: ["src/main.ts"],
+      exclude: ["src/main.ts", "src/test/setup.ts", "**/*.test.ts"],
       rollupTypes: false,
       entryRoot: "src/lib",
       outDir: "dist",
     }),
     updatePackageExports(tsEntries),
   ],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/test/setup.ts',
+    include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'json', 'html'],
+      include: ['src/lib/**/*.ts'],
+    },
+  },
 })
 

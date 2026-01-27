@@ -1,6 +1,6 @@
 import { SafeHTML } from "./html";
 import { EventEmitter, ZuiComponent } from "./types";
-import { makeReactive, toKebabCase } from "./utilities";
+import { isBrowser, makeReactive, toKebabCase } from "./utilities";
 
 const OBSERVED_ATTRS_KEY = Symbol('observedAttributes');
 
@@ -102,7 +102,7 @@ export const defineElement = ({ tagName, html, css = "", options }: DefineElemen
 
     (NewClass as any).observedAttributes = attributes.map(i => (i.name))
 
-    if (!customElements.get(tagName)) {
+    if (isBrowser && !customElements.get(tagName)) {
       customElements.define(tagName, NewClass, options);
     }
 

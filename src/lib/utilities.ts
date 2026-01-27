@@ -5,6 +5,8 @@ export const toKebabCase = (str: string) => str
   .replace(/[\s_]+/g, '-')
   .toLowerCase();
 
+export const isBrowser = typeof window !== 'undefined';
+
 export const makeReactive = <T extends object>(target: T, onChange: () => void): T => {
   const handler: ProxyHandler<T> = {
     set(target, prop, value, receiver) {
