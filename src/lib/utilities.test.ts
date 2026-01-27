@@ -9,10 +9,10 @@ describe('Utilities', () => {
 
   it('makeReactive triggers callback on mutation', async () => {
     let triggered = false
-    const data = { count: 0 }
+    const data = { d: { count: 0 } }
     const reactiveData = makeReactive(data, () => { triggered = true })
 
-    reactiveData.count = 1
+    reactiveData.d.count = 1
     expect(triggered).toBe(true)
   })
 })

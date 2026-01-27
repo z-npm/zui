@@ -102,6 +102,7 @@ export default defineConfig({
     updatePackageExports(tsEntries),
   ],
   test: {
+    reporters: ['verbose'],
     globals: true,
     environment: 'jsdom',
     setupFiles: './src/test/setup.ts',

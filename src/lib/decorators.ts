@@ -26,7 +26,7 @@ const getConvertor = ({ type, name }: PropertyProp, zuiThis: ZuiComponent): numb
   const value = zuiThis.getAttribute(name!)
   if (value !== undefined && value !== null) {
     if (type === "number")
-      return +value
+      return (value === null || value === undefined) ? 0 : Number(value);
     else if (type === "string")
       return value
     else if (type === "boolean") {
@@ -61,7 +61,7 @@ export const defineElement = ({ tagName, html, css = "", options }: DefineElemen
 
       constructor(...args: any[]) {
         super(...args);
-        this.setAttribute("is", tagName);
+        this.setAttribute("z-is", tagName);
         this.shadowRoot = this.attachShadow({ mode: "closed" })
         this.shadowRoot!.appendChild(template.content.cloneNode(true))
       }
@@ -110,10 +110,13 @@ export const defineElement = ({ tagName, html, css = "", options }: DefineElemen
   };
 }
 
-export interface PropertyProp {
-  type?: "string" | "number" | "boolean"
-  name?: string
-  callbackName?: string
+type PropertyType = "string" | "number" | "boolean";
+type PropertyCallback = "Update" | "Changed";
+
+interface PropertyProp {
+  type?: PropertyType;
+  name?: string;
+  callbackName?: `${string}${PropertyCallback}`;
 }
 
 export const property = ({ type, name, callbackName }: PropertyProp = {}) => {
