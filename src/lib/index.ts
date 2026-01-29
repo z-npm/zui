@@ -1,19 +1,31 @@
-import { EventEmitter } from "./types.ts";
+import { EventEmitter, CustomEventDetail } from './decorators';
 
-export * from "./utilities"
-export * from "./decorators"
-export * from "./dom"
-export * from "./types.ts"
-export * from "./html.ts"
+export * from './utilities';
+export * from './decorators';
+export * from './dom';
+export * from './html';
 
-type InferEventDetail<T, K extends keyof T> = T[K] extends EventEmitter<infer P> ? P : never;
+type KebabCase<S extends string> = S extends `${infer T}${infer U}`
+  ? U extends Uncapitalize<U>
+  ? `${Uncapitalize<T>}${KebabCase<U>}`
+  : `${Uncapitalize<T>}-${KebabCase<U>}`
+  : S;
+
+export type InferEventDetail<T> = T extends EventEmitter<infer U>
+  ? CustomEventDetail<U>
+  : never;
+
+type ZuiEventMap<T> = {
+  [K in keyof T as T[K] extends EventEmitter<any>
+  ? KebabCase<string & K>
+  : never]: InferEventDetail<T[K]>
+}
 
 export function Zui<TBase extends new (...args: any[]) => HTMLElement>(Base: TBase) {
-  return class extends Base {
-    addEventListener<K extends string>(
+  return class ZuiElement extends Base {
+    addEventListener<K extends keyof ZuiEventMap<this>>(
       type: K,
-      // @ts-ignore: Unreachable code error
-      listener: (ev: CustomEvent<{ value: InferEventDetail<this, any> }>) => void,
+      listener: (ev: CustomEvent<ZuiEventMap<this>[K]>) => void,
       options?: boolean | AddEventListenerOptions
     ): void;
 
@@ -23,8 +35,15 @@ export function Zui<TBase extends new (...args: any[]) => HTMLElement>(Base: TBa
       options?: boolean | AddEventListenerOptions
     ): void;
 
+    addEventListener(
+      type: string,
+      listener: EventListenerOrEventListenerObject,
+      options?: boolean | AddEventListenerOptions
+    ): void;
+
     addEventListener(type: string, listener: any, options?: any): void {
       super.addEventListener(type, listener, options);
     }
   };
-} 
+}
+

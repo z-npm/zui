@@ -1,12 +1,12 @@
 export interface ZuiComponent extends HTMLElement {
   connected?(): void;
   disconnected?(): void;
-  attributeChanged(
-    attributeName: string,
-    oldValue: string,
-    newValue: string,
-  ): void;
+  attributeChanged?(attributeName: string, oldValue: string, newValue: string): void;
   [key: string]: any;
+}
+
+export interface CustomEventDetail<T> {
+  value: T;
 }
 
 export class EventEmitter<T> {
@@ -14,7 +14,7 @@ export class EventEmitter<T> {
 
   emit(value: T, options?: Omit<CustomEventInit, 'detail'>) {
     this.target.dispatchEvent(
-      new CustomEvent(this.eventName, {
+      new CustomEvent<CustomEventDetail<T>>(this.eventName, {
         detail: { value },
         bubbles: true,
         composed: true,
@@ -24,3 +24,4 @@ export class EventEmitter<T> {
   }
 }
 
+export type EventDetail<T> = T extends EventEmitter<infer U> ? U : never;

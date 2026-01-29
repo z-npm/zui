@@ -14,13 +14,11 @@ const scssEntries = Object.fromEntries(
 );
 
 const tsEntries = Object.fromEntries(
-  glob.sync('src/lib/**/*.{ts,tsx, js, jsx}', {
+  glob.sync('src/lib/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}', {
     ignore: [
+      '**/_*.ts',
       '**/*.d.ts',
-      '**/*.test.ts',
-      '**/*.test.tsx',
-      '**/*.test.js',
-      '**/*.test.jsx'
+      '**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
     ]
   }).map(file => [
     relative('src/lib', file).replace(/\.tsx?$/, ''),
@@ -40,7 +38,13 @@ function updatePackageExports(entries: Record<string, string>) {
 
       Object.keys(entries).forEach((key) => {
         const parentDirName = basename(dirname(entries[key]))
-        const exportKey = (key === 'index' || key === "main") ? '.' : parentDirName === "lib" ? `./${key}` : `./${dirname(key)}`
+        const fileName = basename(key)
+        let exportKey = `./${key}`
+
+        if (key === 'index' || key === 'main') {
+          exportKey = '.'
+        } else if (parentDirName !== 'lib' && fileName === 'index')
+          exportKey = `./${parentDirName}`
 
         if (exportKey === ".") {
           pkg.types = `./dist/${key}.d.ts`
@@ -94,7 +98,14 @@ export default defineConfig({
     swc(),
     libInjectCss(),
     dts({
-      exclude: ["src/main.ts", "src/test/setup.ts", "**/*.test.ts"],
+      exclude: [
+        "src/main.ts",
+        "src/test/setup.ts",
+        '**/_*.ts',
+        '**/*.d.ts',
+        '**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
+      ],
+      include: ["src/lib/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
       rollupTypes: false,
       entryRoot: "src/lib",
       outDir: "dist",
@@ -106,7 +117,9 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: './src/test/setup.ts',
-    include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+    include: [
+      'src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'
+    ],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html'],

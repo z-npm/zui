@@ -1,5 +1,5 @@
 import "./components"
-import { Counter, CounterClickEvent } from "./components"
+import { Counter } from "./components"
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
 <h1>Vite + TypeScript</h1>
@@ -10,12 +10,9 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
 `
 
 const counterRef = document.querySelector<Counter>("#counter")!
-counterRef.addEventListener("counter-click", (e: CustomEvent<{ value: CounterClickEvent }>) => {
+counterRef.addEventListener("counter-click", (e) => {
   counterRef.count += e.detail.value.count
 })
-// counterRef.addEventListener("counter-click", (e) => {
-//   counterRef.count += e.detail.value.count
-// })
 
 console.log(counterRef.count);
 
