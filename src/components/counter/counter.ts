@@ -1,4 +1,4 @@
-import { defineElement, event, property, ref, EventEmitter, Zui, state, UpdateMethods } from "../../lib"
+import { defineElement, event, property, ref, EventEmitter, Zui, state } from "../../lib"
 import htmlStr from "./counter.html?raw"
 import cssStr from "./counter.scss?inline"
 
