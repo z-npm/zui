@@ -1,6 +1,6 @@
 {
   "name": "@o.z/zui",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Next-generation Web Component framework leveraging TypeScript Stage 3 standard decorators.",
   "homepage": "https://github.com/z-npm/zui#readme",
   "docs": "https://github.com/z-npm/zui#readme",

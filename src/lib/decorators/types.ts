@@ -1,3 +1,16 @@
+export type PropertyUpdateMethod<T> =
+  T extends number ? (oldValue: number, newValue: number) => void :
+  T extends string ? (oldValue: string, newValue: string) => void :
+  T extends boolean ? (oldValue: boolean, newValue: boolean) => void :
+  (oldValue: T, newValue: T) => void;
+
+export type UpdateMethods<T> = {
+  [K in keyof T as `${string & K}Update`]?:
+  K extends keyof T
+  ? PropertyUpdateMethod<T[K]>
+  : never;
+};
+
 export interface ZuiComponent extends HTMLElement {
   connected?(): void;
   disconnected?(): void;

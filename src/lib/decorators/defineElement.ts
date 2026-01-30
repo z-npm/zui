@@ -3,7 +3,7 @@ import { isBrowser } from "../utilities"
 import { callFun } from "./_helper"
 import { OBSERVED_ATTRS_KEY } from "./_constants"
 import { PropertyOptions } from "./property"
-import { ZuiComponent } from "./types"
+import { ZuiComponent, UpdateMethods } from "./types"
 
 export interface DefineElementOptions {
   tagName: string
@@ -14,7 +14,7 @@ export interface DefineElementOptions {
 
 export const defineElement = ({ tagName, html, css = "", options }: DefineElementOptions) => {
   return <T extends CustomElementConstructor>(
-    originalClass: T,
+    originalClass: T & { prototype: UpdateMethods<InstanceType<T>> },
     context: ClassDecoratorContext<T>
   ) => {
     const attributes = context.metadata![OBSERVED_ATTRS_KEY] as PropertyOptions[]
@@ -25,7 +25,7 @@ export const defineElement = ({ tagName, html, css = "", options }: DefineElemen
     const template = document.createElement("template")
     template.innerHTML = `<style>${css}</style>${htmlString}`
 
-    const NewClass = class extends originalClass {
+    const NewClass = class extends (originalClass as any) {
       shadowRoot: ShadowRoot
 
       constructor(...args: any[]) {
@@ -72,9 +72,9 @@ export const defineElement = ({ tagName, html, css = "", options }: DefineElemen
     (NewClass as any).observedAttributes = attributes.map(i => (i.name))
 
     if (isBrowser && !customElements.get(tagName)) {
-      customElements.define(tagName, NewClass, options);
+      customElements.define(tagName, NewClass as unknown as T, options);
     }
 
-    return NewClass as T & { prototype: { zcolor: string } };
+    return NewClass as unknown as T;
   };
 }

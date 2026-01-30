@@ -1,4 +1,4 @@
-import { defineElement, event, property, ref, EventEmitter, Zui, state } from "../../lib"
+import { defineElement, event, property, ref, EventEmitter, Zui, state, UpdateMethods } from "../../lib"
 import htmlStr from "./counter.html?raw"
 import cssStr from "./counter.scss?inline"
 
@@ -22,7 +22,7 @@ export class Counter extends Zui(HTMLDivElement) {
   accessor isGood = true
 
   @state()
-  accessor history: number[] = [0, 43]
+  accessor history = [0, 43]
 
   @ref(".counter")
   counterRef!: HTMLDivElement
@@ -64,6 +64,9 @@ export class Counter extends Zui(HTMLDivElement) {
   countUpdate(_oldCount: number, newCount: number) {
     this.counterRef.innerHTML = newCount.toString()
   }
+
+  //Typescript should give error for below function becase of type(shoild be boolien) 
+  // isGoodUpdate(o: string, n: string) { }
 
   historyUpdate(_oldHist: number[], newHist: number[]) {
     this.historyRef.textContent = newHist.slice(-5).join(", ")
