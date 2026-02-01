@@ -1,6 +1,6 @@
 {
   "name": "@o.z/zui",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "Next-generation Web Component framework leveraging TypeScript Stage 3 standard decorators.",
   "homepage": "https://github.com/z-npm/zui#readme",
   "docs": "https://github.com/z-npm/zui#readme",
@@ -67,7 +67,7 @@
     "@vitest/ui": "^4.0.18",
     "@z-code/vite-plugin-swc": "^0.5.5",
     "glob": "^13.0.0",
-    "globals": "^17.2.0",
+    "globals": "^17.3.0",
     "jsdom": "^27.4.0",
     "sass": "^1.97.3",
     "typescript": "^5.9.3",
@@ -119,6 +119,11 @@
       "types": "./dist/decorators/property.d.ts",
       "import": "./dist/decorators/property.js",
       "require": "./dist/decorators/property.cjs"
+    },
+    "./decorators/mixin": {
+      "types": "./dist/decorators/mixin.d.ts",
+      "import": "./dist/decorators/mixin.js",
+      "require": "./dist/decorators/mixin.cjs"
     },
     "./decorators": {
       "types": "./dist/decorators/index.d.ts",

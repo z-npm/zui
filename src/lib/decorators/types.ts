@@ -38,3 +38,20 @@ export class EventEmitter<T> {
 }
 
 export type EventDetail<T> = T extends EventEmitter<infer U> ? U : never;
+
+export type KebabCase<S extends string> = S extends `${infer T}${infer U}`
+  ? U extends Uncapitalize<U>
+  ? `${Uncapitalize<T>}${KebabCase<U>}`
+  : `${Uncapitalize<T>}-${KebabCase<U>}`
+  : S;
+
+export type InferEventDetail<T> = T extends EventEmitter<infer U>
+  ? CustomEventDetail<U>
+  : never;
+
+export type ZuiEventMap<T> = {
+  [K in keyof T as T[K] extends EventEmitter<any>
+  ? KebabCase<string & K>
+  : never]: InferEventDetail<T[K]>
+}
+
