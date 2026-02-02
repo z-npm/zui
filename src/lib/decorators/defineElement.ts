@@ -1,3 +1,10 @@
+/**
+ * @fileoverview Core decorator for defining custom elements in ZUI framework.
+ * Provides declarative element registration with template, styles, and lifecycle hooks.
+ * 
+ * @module defineElement
+ */
+
 import { SafeHTML } from "../html"
 import { isBrowser } from "../utilities"
 import { callFun } from "./_helper"
@@ -5,6 +12,23 @@ import { OBSERVED_ATTRS_KEY } from "./_constants"
 import { PropertyOptions } from "./property"
 import { ZuiComponent, UpdateMethods } from "./types"
 
+/**
+ * Configuration options for defining a custom element.
+ * 
+ * @interface DefineElementOptions
+ * @property {string} tagName - The custom element tag name (must contain hyphen, e.g., 'my-counter')
+ * @property {string|SafeHTML} html - HTML template string or SafeHTML object for the element's shadow DOM
+ * @property {string} [css] - Optional CSS string to inject into the shadow DOM
+ * @property {ElementDefinitionOptions} [options] - Custom element definition options including extension support
+ * 
+ * @example
+ * @defineElement({
+ *   tagName: 'my-counter',
+ *   html: '<div>Count: <span class="count"></span></div>',
+ *   css: ':host { display: block; }',
+ *   options: { extends: 'div' }
+ * })
+ */
 export interface DefineElementOptions {
   tagName: string
   html: string | SafeHTML
@@ -12,6 +36,37 @@ export interface DefineElementOptions {
   options?: ElementDefinitionOptions
 }
 
+/**
+ * Class decorator that registers a custom element with the browser's Custom Elements registry.
+ * 
+ * This decorator:
+ * 1. Creates a Shadow DOM for the element
+ * 2. Injects HTML and CSS templates
+ * 3. Sets up lifecycle callbacks (connected/disconnected)
+ * 4. Handles attribute change observation
+ * 5. Registers the element with customElements.define()
+ * 
+ * @template T - Constructor type extending CustomElementConstructor
+ * @param {DefineElementOptions} config - Element configuration object
+ * @returns {ClassDecorator} A class decorator function
+ * 
+ * @throws {string} If HTML template is empty
+ * @example
+ * ```typescript
+ * @defineElement({
+ *   tagName: 'my-counter',
+ *   html: counterTemplate,
+ *   css: counterStyles,
+ *   options: { extends: 'div' }
+ * })
+ * class Counter extends Zui(HTMLDivElement) {
+ *   // class implementation
+ * }
+ * ```
+ * 
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define}
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/attachShadow}
+ */
 export const defineElement = ({ tagName, html, css = "", options }: DefineElementOptions) => {
   return <T extends CustomElementConstructor>(
     originalClass: T & { prototype: UpdateMethods<InstanceType<T>> },

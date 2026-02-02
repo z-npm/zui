@@ -106,30 +106,7 @@ Since we extended the native `div`, we use the `is` attribute:
 ---
 
 ## 📚 API Reference
-
-### ```@defineElement(config)```
-Class decorator to register the custom element.
-* **tagName**: The kebab-case name for your component.
-* **html**: Raw HTML string for the template.
-* **css**: (Optional) CSS string to be injected into the Shadow Root.
-* **options**: (Optional) Standard `ElementDefinitionOptions` (e.g., `{ extends: 'button' }`).
-
-### ```@property(options)```
-Used on `accessor` fields to create reactive attributes.
-* **type**: `"string" | "number" | "boolean"`. If omitted, it's inferred from the initial value.
-* **name**: Custom attribute name (defaults to kebab-case of the property).
-* **Hook**: Automatically calls `[propertyName]Update(old, new)` on change.
-
-### ```@ref(selector)```
-Field decorator that automatically assigns a child element from the Shadow Root to the property using `querySelector`.
-
-### ```@event(options)```
-Field decorator that initializes an `EventEmitter`. 
-* **name**: Custom event name (defaults to kebab-case of the property).
-* **Usage**: Call `this.propertyName.emit(payload)` to dispatch a `CustomEvent`.
-
-### ```Zui(BaseClass)```
-A class mixin that enhances the base element (like `HTMLElement` or `HTMLDivElement`) with improved TypeScript definitions for `addEventListener`, ensuring custom events have correct payload types.
+[API Docs](docs/api/README.md)
 
 ---
 
