@@ -6,7 +6,7 @@
 
 > **makeReactive**\<`T`\>(`target`, `onChange`, `proxyCache?`): `T`
 
-Defined in: [src/lib/utilities.ts:120](https://github.com/z-npm/zui/blob/4a034ce3ea9e1b4fb23ee85178fdca766c31b1cb/src/lib/utilities.ts#L120)
+Defined in: src/lib/utilities/makeReactive.ts:41
 
 Creates a reactive proxy for an object that triggers callbacks on mutations.
 

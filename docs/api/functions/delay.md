@@ -6,7 +6,7 @@
 
 > **delay**(`ms`): `Promise`\<`unknown`\>
 
-Defined in: [src/lib/utilities.ts:25](https://github.com/z-npm/zui/blob/4a034ce3ea9e1b4fb23ee85178fdca766c31b1cb/src/lib/utilities.ts#L25)
+Defined in: src/lib/utilities/delay.ts:18
 
 Creates a promise that resolves after a specified delay.
 

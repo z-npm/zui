@@ -1,5 +1,5 @@
-import { PropertyOptions } from "./property";
-import { ZuiComponent } from "./types";
+import { PropertyOptions } from "../property";
+import { ZuiComponent } from "../types";
 
 
 export const callFun = (attribute: PropertyOptions | undefined, oldValue: unknown, newValue: unknown, zuiThis: ZuiComponent) => {

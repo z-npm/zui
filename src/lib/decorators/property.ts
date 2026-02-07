@@ -91,16 +91,19 @@ export const property = ({ type, name, callbackName }: PropertyOptions = {}) => 
         attribute.type = type ?? typeof initialValue as any
 
         const zuiThis = this as unknown as ZuiComponent
-        zuiThis.setAttribute(attribute.name!, String(initialValue));
+        const defaultValue = getConvertor(attribute, zuiThis) as V
 
-        queueMicrotask(() => {
-          callFun(
-            attribute,
-            initialValue,
-            initialValue,
-            zuiThis)
-        });
+        if (defaultValue === undefined || defaultValue === null) {
+          zuiThis.setAttribute(attribute.name!, String(initialValue));
 
+          queueMicrotask(() => {
+            callFun(
+              attribute,
+              initialValue,
+              initialValue,
+              zuiThis)
+          });
+        }
         return initialValue;
       },
       get: function (this: T): V {

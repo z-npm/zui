@@ -1,6 +1,6 @@
 {
   "name": "@o.z/zui",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "description": "Next-generation Web Component framework leveraging TypeScript Stage 3 standard decorators.",
   "homepage": "https://github.com/z-npm/zui#readme",
   "docs": "https://github.com/z-npm/zui#readme",
@@ -64,16 +64,16 @@
     "@testing-library/dom": "^10.4.1",
     "@testing-library/user-event": "^14.6.1",
     "@types/jsdom": "^27.0.0",
-    "@types/node": "^25.1.0",
+    "@types/node": "^25.2.1",
     "@vitest/coverage-v8": "^4.0.18",
     "@vitest/ui": "^4.0.18",
     "@z-code/vite-plugin-swc": "^0.5.5",
-    "glob": "^13.0.0",
+    "glob": "^13.0.1",
     "globals": "^17.3.0",
-    "jsdom": "^27.4.0",
+    "jsdom": "^28.0.0",
     "sass": "^1.97.3",
     "typedoc": "^0.28.16",
-    "typedoc-plugin-markdown": "^4.9.0",
+    "typedoc-plugin-markdown": "^4.10.0",
     "typescript": "^5.9.3",
     "vite": "^7.3.1",
     "vite-plugin-dts": "^4.5.4",
@@ -84,11 +84,6 @@
   "module": "./dist/index.js",
   "main": "./dist/index.cjs",
   "exports": {
-    "./utilities": {
-      "types": "./dist/utilities.d.ts",
-      "import": "./dist/utilities.js",
-      "require": "./dist/utilities.cjs"
-    },
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
@@ -103,6 +98,31 @@
       "types": "./dist/dom.d.ts",
       "import": "./dist/dom.js",
       "require": "./dist/dom.cjs"
+    },
+    "./utilities/toKebabCase": {
+      "types": "./dist/utilities/toKebabCase.d.ts",
+      "import": "./dist/utilities/toKebabCase.js",
+      "require": "./dist/utilities/toKebabCase.cjs"
+    },
+    "./utilities/makeReactive": {
+      "types": "./dist/utilities/makeReactive.d.ts",
+      "import": "./dist/utilities/makeReactive.js",
+      "require": "./dist/utilities/makeReactive.cjs"
+    },
+    "./utilities/isBrowser": {
+      "types": "./dist/utilities/isBrowser.d.ts",
+      "import": "./dist/utilities/isBrowser.js",
+      "require": "./dist/utilities/isBrowser.cjs"
+    },
+    "./utilities": {
+      "types": "./dist/utilities/index.d.ts",
+      "import": "./dist/utilities/index.js",
+      "require": "./dist/utilities/index.cjs"
+    },
+    "./utilities/delay": {
+      "types": "./dist/utilities/delay.d.ts",
+      "import": "./dist/utilities/delay.js",
+      "require": "./dist/utilities/delay.cjs"
     },
     "./decorators/types": {
       "types": "./dist/decorators/types.d.ts",

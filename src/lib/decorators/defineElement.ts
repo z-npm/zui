@@ -8,7 +8,7 @@
 import { SafeHTML } from "../html"
 import { isBrowser } from "../utilities"
 import { callFun } from "./_helper"
-import { OBSERVED_ATTRS_KEY } from "./_constants"
+import { EVENT_CONSTRUCTOR_KEY, OBSERVED_ATTRS_KEY, REF_CONSTRUCTOR_KEY } from "./_constants"
 import { PropertyOptions } from "./property"
 import { ZuiComponent, UpdateMethods } from "./types"
 
@@ -88,6 +88,9 @@ export const defineElement = ({ tagName, html, css = "", options }: DefineElemen
         this.setAttribute("z-is", tagName);
         this.shadowRoot = this.attachShadow({ mode: "closed" })
         this.shadowRoot!.appendChild(template.content.cloneNode(true))
+
+        this?.[EVENT_CONSTRUCTOR_KEY as any]?.()
+        this?.[REF_CONSTRUCTOR_KEY as any]?.()
       }
 
       connectedCallback() {
@@ -111,10 +114,8 @@ export const defineElement = ({ tagName, html, css = "", options }: DefineElemen
       ) {
         const zuiThis = this as unknown as ZuiComponent
         if (oldValue !== newValue) {
-          zuiThis.attributeChanged?.(attributeName, oldValue, newValue)
-        }
+          zuiThis?.attributeChanged?.(attributeName, oldValue, newValue)
 
-        if (oldValue !== newValue) {
           callFun(
             attributes.find(i => i.name === attributeName),
             oldValue,

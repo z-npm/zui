@@ -62,8 +62,8 @@ class MyElement extends Zui(HTMLElement) {
 - [html](functions/html.md)
 - [unsafeHTML](functions/unsafeHTML.md)
 - [delay](functions/delay.md)
-- [toKebabCase](functions/toKebabCase.md)
 - [makeReactive](functions/makeReactive.md)
+- [toKebabCase](functions/toKebabCase.md)
 
 ## Events
 

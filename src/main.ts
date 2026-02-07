@@ -1,7 +1,9 @@
 import "./components"
 import { Counter } from "./components"
 
-document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
+const appRef = document.querySelector<HTMLDivElement>("#app")!
+
+appRef.innerHTML = `
 <h1>Vite + TypeScript</h1>
 <div id="counter" is="my-counter">
   <span slot="increase">+1</span>
@@ -9,12 +11,13 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
 </div>
 `
 
+// const counterRef = new Counter()
+// appRef.appendChild(counterRef)
+
 const counterRef = document.querySelector<Counter>("#counter")!
 counterRef.addEventListener("counter-click", (e) => {
   counterRef.count += e.detail.value.count
 })
-
-console.log(counterRef.count);
 
 
 setTimeout(() => {

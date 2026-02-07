@@ -5,7 +5,7 @@
  */
 
 import { describe, it, expect } from 'vitest'
-import { toKebabCase, makeReactive } from './utilities'
+import { toKebabCase, makeReactive } from '.'
 
 /**
  * Test suite for utility functions.

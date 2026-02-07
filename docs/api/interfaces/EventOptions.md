@@ -4,7 +4,7 @@
 
 # Interface: EventOptions
 
-Defined in: [src/lib/decorators/event.ts:21](https://github.com/z-npm/zui/blob/4a034ce3ea9e1b4fb23ee85178fdca766c31b1cb/src/lib/decorators/event.ts#L21)
+Defined in: [src/lib/decorators/event.ts:22](https://github.com/z-npm/zui/blob/7462a855b708843a1cb700339806285d1dcda15f/src/lib/decorators/event.ts#L22)
 
 Configuration options for the  decorator.
 
@@ -23,6 +23,6 @@ onChange!: EventEmitter<number>;
 
 > `optional` **name**: `string`
 
-Defined in: [src/lib/decorators/event.ts:22](https://github.com/z-npm/zui/blob/4a034ce3ea9e1b4fb23ee85178fdca766c31b1cb/src/lib/decorators/event.ts#L22)
+Defined in: [src/lib/decorators/event.ts:23](https://github.com/z-npm/zui/blob/7462a855b708843a1cb700339806285d1dcda15f/src/lib/decorators/event.ts#L23)
 
 Custom event name (defaults to kebab-case of property name)

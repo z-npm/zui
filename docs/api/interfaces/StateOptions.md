@@ -4,7 +4,7 @@
 
 # Interface: StateOptions
 
-Defined in: [src/lib/decorators/state.ts:21](https://github.com/z-npm/zui/blob/4a034ce3ea9e1b4fb23ee85178fdca766c31b1cb/src/lib/decorators/state.ts#L21)
+Defined in: [src/lib/decorators/state.ts:21](https://github.com/z-npm/zui/blob/7462a855b708843a1cb700339806285d1dcda15f/src/lib/decorators/state.ts#L21)
 
 Configuration options for the
 
@@ -27,6 +27,6 @@ accessor history: number[] = [];
 
 > `optional` **callbackName**: `string`
 
-Defined in: [src/lib/decorators/state.ts:22](https://github.com/z-npm/zui/blob/4a034ce3ea9e1b4fb23ee85178fdca766c31b1cb/src/lib/decorators/state.ts#L22)
+Defined in: [src/lib/decorators/state.ts:22](https://github.com/z-npm/zui/blob/7462a855b708843a1cb700339806285d1dcda15f/src/lib/decorators/state.ts#L22)
 
 Custom update callback method name

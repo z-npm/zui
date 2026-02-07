@@ -6,6 +6,7 @@
  */
 
 import { toKebabCase } from "../utilities";
+import { EVENT_CONSTRUCTOR_KEY } from "./_constants";
 import { EventEmitter, ZuiComponent } from "./types";
 
 /**
@@ -68,10 +69,13 @@ export const event = (options: EventOptions = {}) => {
     const eventName = options.name ?? toKebabCase(context.name.toString())
 
     context.addInitializer(function (this: T) {
-      queueMicrotask(() => {
-        const zuiThis = this as unknown as ZuiComponent
+      const zuiThis = this as unknown as ZuiComponent
+      const refInit = zuiThis?.[EVENT_CONSTRUCTOR_KEY as any]
+
+      zuiThis[EVENT_CONSTRUCTOR_KEY as any] = function (this: any) {
+        if (typeof refInit === "function") refInit.call(this);
         zuiThis[context.name.toString()] = new EventEmitter<V>(zuiThis, eventName)
-      })
+      }
     })
   }
 }

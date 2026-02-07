@@ -16,7 +16,8 @@ const scssEntries = Object.fromEntries(
 const tsEntries = Object.fromEntries(
   glob.sync('src/lib/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}', {
     ignore: [
-      '**/_*.ts',
+      '**/_*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
+      '**/_*/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
       '**/*.d.ts',
       '**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
     ]
@@ -101,7 +102,8 @@ export default defineConfig({
       exclude: [
         "src/main.ts",
         "src/test/setup.ts",
-        '**/_*.ts',
+        '**/_*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
+        '**/_*/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
         '**/*.d.ts',
         '**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
       ],

@@ -4,7 +4,7 @@
 
 # Class: SafeHTML
 
-Defined in: [src/lib/html.ts:25](https://github.com/z-npm/zui/blob/4a034ce3ea9e1b4fb23ee85178fdca766c31b1cb/src/lib/html.ts#L25)
+Defined in: [src/lib/html.ts:25](https://github.com/z-npm/zui/blob/7462a855b708843a1cb700339806285d1dcda15f/src/lib/html.ts#L25)
 
 A wrapper class to mark strings as "safe" (already sanitized or trusted).
 
@@ -29,7 +29,7 @@ console.log(safe.value); // '<div>Trusted content</div>'
 
 > **new SafeHTML**(`value`): `SafeHTML`
 
-Defined in: [src/lib/html.ts:30](https://github.com/z-npm/zui/blob/4a034ce3ea9e1b4fb23ee85178fdca766c31b1cb/src/lib/html.ts#L30)
+Defined in: [src/lib/html.ts:30](https://github.com/z-npm/zui/blob/7462a855b708843a1cb700339806285d1dcda15f/src/lib/html.ts#L30)
 
 Creates a SafeHTML instance.
 
@@ -51,7 +51,7 @@ HTML string that is already sanitized or trusted
 
 > `readonly` **value**: `string`
 
-Defined in: [src/lib/html.ts:30](https://github.com/z-npm/zui/blob/4a034ce3ea9e1b4fb23ee85178fdca766c31b1cb/src/lib/html.ts#L30)
+Defined in: [src/lib/html.ts:30](https://github.com/z-npm/zui/blob/7462a855b708843a1cb700339806285d1dcda15f/src/lib/html.ts#L30)
 
 The safe HTML string
 
@@ -61,7 +61,7 @@ The safe HTML string
 
 > **toString**(): `string`
 
-Defined in: [src/lib/html.ts:36](https://github.com/z-npm/zui/blob/4a034ce3ea9e1b4fb23ee85178fdca766c31b1cb/src/lib/html.ts#L36)
+Defined in: [src/lib/html.ts:36](https://github.com/z-npm/zui/blob/7462a855b708843a1cb700339806285d1dcda15f/src/lib/html.ts#L36)
 
 Returns the safe HTML string.
 

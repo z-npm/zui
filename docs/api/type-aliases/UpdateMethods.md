@@ -6,7 +6,7 @@
 
 > **UpdateMethods**\<`T`\> = `` { [K in keyof T as `${string & K}Update`]?: K extends keyof T ? PropertyUpdateMethod<T[K]> : never } ``
 
-Defined in: [src/lib/decorators/types.ts:34](https://github.com/z-npm/zui/blob/4a034ce3ea9e1b4fb23ee85178fdca766c31b1cb/src/lib/decorators/types.ts#L34)
+Defined in: [src/lib/decorators/types.ts:34](https://github.com/z-npm/zui/blob/7462a855b708843a1cb700339806285d1dcda15f/src/lib/decorators/types.ts#L34)
 
 Mapped type that generates update method names from property names.
 Automatically appends 'Update' suffix to property names.
