@@ -6,7 +6,7 @@
 
 > **state**(`options?`): \<`T`, `V`\>(`accessor`, `context`) => `object`
 
-Defined in: [src/lib/decorators/state.ts:65](https://github.com/z-npm/zui/blob/7462a855b708843a1cb700339806285d1dcda15f/src/lib/decorators/state.ts#L65)
+Defined in: [src/lib/decorators/state.ts:65](https://github.com/z-npm/zui/blob/7f1d66960688b03e03628842d4fb0c24590b68ab/src/lib/decorators/state.ts#L65)
 
 Accessor decorator for internal reactive state that doesn't reflect to DOM attributes.
 
@@ -138,4 +138,4 @@ accessor data = {};
 
 ## See
 
-[makeReactive](makeReactive.md)
+makeReactive

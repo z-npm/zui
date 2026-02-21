@@ -4,7 +4,7 @@
 
 # Interface: DefineElementOptions
 
-Defined in: [src/lib/decorators/defineElement.ts:32](https://github.com/z-npm/zui/blob/7462a855b708843a1cb700339806285d1dcda15f/src/lib/decorators/defineElement.ts#L32)
+Defined in: [src/lib/decorators/defineElement.ts:36](https://github.com/z-npm/zui/blob/7f1d66960688b03e03628842d4fb0c24590b68ab/src/lib/decorators/defineElement.ts#L36)
 
 Configuration options for defining a custom element.
 
@@ -27,7 +27,7 @@ Configuration options for defining a custom element.
 
 > **tagName**: `string`
 
-Defined in: [src/lib/decorators/defineElement.ts:33](https://github.com/z-npm/zui/blob/7462a855b708843a1cb700339806285d1dcda15f/src/lib/decorators/defineElement.ts#L33)
+Defined in: [src/lib/decorators/defineElement.ts:37](https://github.com/z-npm/zui/blob/7f1d66960688b03e03628842d4fb0c24590b68ab/src/lib/decorators/defineElement.ts#L37)
 
 The custom element tag name (must contain hyphen, e.g., 'my-counter')
 
@@ -35,9 +35,9 @@ The custom element tag name (must contain hyphen, e.g., 'my-counter')
 
 ### html
 
-> **html**: `string` \| [`SafeHTML`](../classes/SafeHTML.md)
+> **html**: `string` \| `SafeHTML`
 
-Defined in: [src/lib/decorators/defineElement.ts:34](https://github.com/z-npm/zui/blob/7462a855b708843a1cb700339806285d1dcda15f/src/lib/decorators/defineElement.ts#L34)
+Defined in: [src/lib/decorators/defineElement.ts:38](https://github.com/z-npm/zui/blob/7f1d66960688b03e03628842d4fb0c24590b68ab/src/lib/decorators/defineElement.ts#L38)
 
 HTML template string or SafeHTML object for the element's shadow DOM
 
@@ -47,7 +47,7 @@ HTML template string or SafeHTML object for the element's shadow DOM
 
 > `optional` **css**: `string`
 
-Defined in: [src/lib/decorators/defineElement.ts:35](https://github.com/z-npm/zui/blob/7462a855b708843a1cb700339806285d1dcda15f/src/lib/decorators/defineElement.ts#L35)
+Defined in: [src/lib/decorators/defineElement.ts:39](https://github.com/z-npm/zui/blob/7f1d66960688b03e03628842d4fb0c24590b68ab/src/lib/decorators/defineElement.ts#L39)
 
 Optional CSS string to inject into the shadow DOM
 
@@ -57,6 +57,6 @@ Optional CSS string to inject into the shadow DOM
 
 > `optional` **options**: `ElementDefinitionOptions`
 
-Defined in: [src/lib/decorators/defineElement.ts:36](https://github.com/z-npm/zui/blob/7462a855b708843a1cb700339806285d1dcda15f/src/lib/decorators/defineElement.ts#L36)
+Defined in: [src/lib/decorators/defineElement.ts:40](https://github.com/z-npm/zui/blob/7f1d66960688b03e03628842d4fb0c24590b68ab/src/lib/decorators/defineElement.ts#L40)
 
 Custom element definition options including extension support

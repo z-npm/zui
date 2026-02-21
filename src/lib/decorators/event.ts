@@ -5,7 +5,7 @@
  * @module event
  */
 
-import { toKebabCase } from "../utilities";
+import { toKebabCase } from "@o.z/utils";
 import { EVENT_CONSTRUCTOR_KEY } from "./_constants";
 import { EventEmitter, ZuiComponent } from "./types";
 

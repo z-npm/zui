@@ -1,6 +1,6 @@
 {
   "name": "@o.z/zui",
-  "version": "0.4.6",
+  "version": "0.5.0",
   "description": "Next-generation Web Component framework leveraging TypeScript Stage 3 standard decorators.",
   "homepage": "https://github.com/z-npm/zui#readme",
   "docs": "https://github.com/z-npm/zui#readme",
@@ -61,18 +61,18 @@
     "test:coverage": "vitest run --coverage"
   },
   "devDependencies": {
+    "@o.z/vite-plugin-swc": "^0.6.1",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/user-event": "^14.6.1",
     "@types/jsdom": "^27.0.0",
-    "@types/node": "^25.2.1",
+    "@types/node": "^25.3.0",
     "@vitest/coverage-v8": "^4.0.18",
     "@vitest/ui": "^4.0.18",
-    "@z-code/vite-plugin-swc": "^0.5.5",
-    "glob": "^13.0.1",
+    "glob": "^13.0.6",
     "globals": "^17.3.0",
-    "jsdom": "^28.0.0",
+    "jsdom": "^28.1.0",
     "sass": "^1.97.3",
-    "typedoc": "^0.28.16",
+    "typedoc": "^0.28.17",
     "typedoc-plugin-markdown": "^4.10.0",
     "typescript": "^5.9.3",
     "vite": "^7.3.1",
@@ -88,41 +88,6 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
-    },
-    "./html": {
-      "types": "./dist/html.d.ts",
-      "import": "./dist/html.js",
-      "require": "./dist/html.cjs"
-    },
-    "./dom": {
-      "types": "./dist/dom.d.ts",
-      "import": "./dist/dom.js",
-      "require": "./dist/dom.cjs"
-    },
-    "./utilities/toKebabCase": {
-      "types": "./dist/utilities/toKebabCase.d.ts",
-      "import": "./dist/utilities/toKebabCase.js",
-      "require": "./dist/utilities/toKebabCase.cjs"
-    },
-    "./utilities/makeReactive": {
-      "types": "./dist/utilities/makeReactive.d.ts",
-      "import": "./dist/utilities/makeReactive.js",
-      "require": "./dist/utilities/makeReactive.cjs"
-    },
-    "./utilities/isBrowser": {
-      "types": "./dist/utilities/isBrowser.d.ts",
-      "import": "./dist/utilities/isBrowser.js",
-      "require": "./dist/utilities/isBrowser.cjs"
-    },
-    "./utilities": {
-      "types": "./dist/utilities/index.d.ts",
-      "import": "./dist/utilities/index.js",
-      "require": "./dist/utilities/index.cjs"
-    },
-    "./utilities/delay": {
-      "types": "./dist/utilities/delay.d.ts",
-      "import": "./dist/utilities/delay.js",
-      "require": "./dist/utilities/delay.cjs"
     },
     "./decorators/types": {
       "types": "./dist/decorators/types.d.ts",
@@ -154,6 +119,11 @@
       "import": "./dist/decorators/index.js",
       "require": "./dist/decorators/index.cjs"
     },
+    "./decorators/fetch": {
+      "types": "./dist/decorators/fetch.d.ts",
+      "import": "./dist/decorators/fetch.js",
+      "require": "./dist/decorators/fetch.cjs"
+    },
     "./decorators/event": {
       "types": "./dist/decorators/event.d.ts",
       "import": "./dist/decorators/event.js",
@@ -166,7 +136,7 @@
     }
   },
   "dependencies": {
-    "csstype": "^3.2.3"
+    "@o.z/utils": "^0.2.3"
   },
   "engines": {
     "node": ">=18.0.0",

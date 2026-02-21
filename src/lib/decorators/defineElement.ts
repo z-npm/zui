@@ -5,10 +5,14 @@
  * @module defineElement
  */
 
-import { SafeHTML } from "../html"
-import { isBrowser } from "../utilities"
+import { isBrowser, SafeHTML } from "@o.z/utils"
 import { callFun } from "./_helper"
-import { EVENT_CONSTRUCTOR_KEY, OBSERVED_ATTRS_KEY, REF_CONSTRUCTOR_KEY } from "./_constants"
+import {
+  OBSERVED_ATTRS_KEY,
+  REF_CONSTRUCTOR_KEY,
+  EVENT_CONSTRUCTOR_KEY,
+  FETCH_CONSTRUCTOR_KEY,
+} from "./_constants"
 import { PropertyOptions } from "./property"
 import { ZuiComponent, UpdateMethods } from "./types"
 
@@ -97,6 +101,9 @@ export const defineElement = ({ tagName, html, css = "", options }: DefineElemen
         queueMicrotask(() => {
           const zuiThis = this as unknown as ZuiComponent
           zuiThis.connected?.()
+          queueMicrotask(() => {
+            this?.[FETCH_CONSTRUCTOR_KEY as any]?.()
+          })
         })
       }
 

@@ -6,7 +6,7 @@
 
 > **event**(`options?`): \<`T`, `V`\>(`_target`, `context`) => `void`
 
-Defined in: [src/lib/decorators/event.ts:64](https://github.com/z-npm/zui/blob/7462a855b708843a1cb700339806285d1dcda15f/src/lib/decorators/event.ts#L64)
+Defined in: [src/lib/decorators/event.ts:64](https://github.com/z-npm/zui/blob/7f1d66960688b03e03628842d4fb0c24590b68ab/src/lib/decorators/event.ts#L64)
 
 Field decorator that creates a typed EventEmitter instance for dispatching custom events.
 

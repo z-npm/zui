@@ -1,4 +1,5 @@
 import { defineElement, event, property, ref, EventEmitter, Zui, state } from "../../lib"
+import { fetch } from "../../lib/decorators/fetch";
 import htmlStr from "./counter.html?raw"
 import cssStr from "./counter.scss?inline"
 
@@ -39,8 +40,27 @@ export class Counter extends Zui(HTMLDivElement) {
   @event()
   counterClick!: EventEmitter<CounterClickEvent>
 
+  @fetch({
+    url: "https://jsonplaceholder.typicode.com/users",
+    autoFetch: false,
+    onError(error) {
+      console.log("e:", error);
+    },
+    onSuccess(result) {
+      console.log("r:", result);
+    },
+    onLoadingChange(isLoading) {
+      console.log("l:", isLoading);
+    },
+  })
+  users: any
+
   constructor() {
     super()
+
+    setTimeout(() => {
+      (this as any).refetchUsers?.()
+    }, 3000);
   }
 
   connected() {

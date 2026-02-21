@@ -5,7 +5,7 @@
  * @module state
  */
 
-import { makeReactive } from "../utilities";
+import { makeReactive } from "@o.z/utils";
 import { ZuiComponent } from "./types";
 
 /**

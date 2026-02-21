@@ -4,7 +4,7 @@
 
 # Class: EventEmitter\<T\>
 
-Defined in: [src/lib/decorators/types.ts:82](https://github.com/z-npm/zui/blob/7462a855b708843a1cb700339806285d1dcda15f/src/lib/decorators/types.ts#L82)
+Defined in: [src/lib/decorators/types.ts:82](https://github.com/z-npm/zui/blob/7f1d66960688b03e03628842d4fb0c24590b68ab/src/lib/decorators/types.ts#L82)
 
 Type-safe event emitter for dispatching custom events.
 
@@ -30,7 +30,7 @@ Event detail type
 
 > **new EventEmitter**\<`T`\>(`target`, `eventName`): `EventEmitter`\<`T`\>
 
-Defined in: [src/lib/decorators/types.ts:88](https://github.com/z-npm/zui/blob/7462a855b708843a1cb700339806285d1dcda15f/src/lib/decorators/types.ts#L88)
+Defined in: [src/lib/decorators/types.ts:88](https://github.com/z-npm/zui/blob/7f1d66960688b03e03628842d4fb0c24590b68ab/src/lib/decorators/types.ts#L88)
 
 Creates an event emitter.
 
@@ -58,7 +58,7 @@ Name of the custom event (converted to kebab-case)
 
 > **emit**(`value`, `options?`): `void`
 
-Defined in: [src/lib/decorators/types.ts:105](https://github.com/z-npm/zui/blob/7462a855b708843a1cb700339806285d1dcda15f/src/lib/decorators/types.ts#L105)
+Defined in: [src/lib/decorators/types.ts:105](https://github.com/z-npm/zui/blob/7f1d66960688b03e03628842d4fb0c24590b68ab/src/lib/decorators/types.ts#L105)
 
 Dispatches a custom event.
 

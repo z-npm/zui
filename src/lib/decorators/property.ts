@@ -5,7 +5,7 @@
  * @module property
  */
 
-import { toKebabCase } from "../utilities";
+import { toKebabCase } from "@o.z/utils";
 import { callFun, getConvertor } from "./_helper";
 import { OBSERVED_ATTRS_KEY } from "./_constants";
 import { ZuiComponent } from "./types";

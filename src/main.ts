@@ -28,3 +28,12 @@ setTimeout(() => {
 setTimeout(() => {
   counterRef.history[1]++
 }, 5001);
+
+
+// const result = await fetchWorker({
+//   url: "https://jsonplaceholder.typicode.com/users"
+// })
+//
+//
+// console.log(result);
+

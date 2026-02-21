@@ -4,7 +4,7 @@
 
 # Interface: ZuiComponent
 
-Defined in: [src/lib/decorators/types.ts:48](https://github.com/z-npm/zui/blob/7462a855b708843a1cb700339806285d1dcda15f/src/lib/decorators/types.ts#L48)
+Defined in: [src/lib/decorators/types.ts:48](https://github.com/z-npm/zui/blob/7f1d66960688b03e03628842d4fb0c24590b68ab/src/lib/decorators/types.ts#L48)
 
 Base interface for all ZUI components.
 Extends HTMLElement with optional lifecycle methods.
@@ -3695,7 +3695,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:11120
 
 > `optional` **connected**(): `void`
 
-Defined in: [src/lib/decorators/types.ts:50](https://github.com/z-npm/zui/blob/7462a855b708843a1cb700339806285d1dcda15f/src/lib/decorators/types.ts#L50)
+Defined in: [src/lib/decorators/types.ts:50](https://github.com/z-npm/zui/blob/7f1d66960688b03e03628842d4fb0c24590b68ab/src/lib/decorators/types.ts#L50)
 
 Called when element connects to DOM
 
@@ -3709,7 +3709,7 @@ Called when element connects to DOM
 
 > `optional` **disconnected**(): `void`
 
-Defined in: [src/lib/decorators/types.ts:52](https://github.com/z-npm/zui/blob/7462a855b708843a1cb700339806285d1dcda15f/src/lib/decorators/types.ts#L52)
+Defined in: [src/lib/decorators/types.ts:52](https://github.com/z-npm/zui/blob/7f1d66960688b03e03628842d4fb0c24590b68ab/src/lib/decorators/types.ts#L52)
 
 Called when element disconnects from DOM
 
@@ -3723,7 +3723,7 @@ Called when element disconnects from DOM
 
 > `optional` **attributeChanged**(`attributeName`, `oldValue`, `newValue`): `void`
 
-Defined in: [src/lib/decorators/types.ts:54](https://github.com/z-npm/zui/blob/7462a855b708843a1cb700339806285d1dcda15f/src/lib/decorators/types.ts#L54)
+Defined in: [src/lib/decorators/types.ts:54](https://github.com/z-npm/zui/blob/7f1d66960688b03e03628842d4fb0c24590b68ab/src/lib/decorators/types.ts#L54)
 
 Called when observed attribute changes
 
@@ -5337,6 +5337,8 @@ This is a legacy alias of `matches`.
 
 ### dispatchEvent()
 
+#### Call Signature
+
 > **dispatchEvent**(`event`): `boolean`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:11575
@@ -5345,17 +5347,41 @@ The **`dispatchEvent()`** method of the EventTarget sends an Event to the object
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventTarget/dispatchEvent)
 
-#### Parameters
+##### Parameters
 
-##### event
+###### event
 
 `Event`
 
-#### Returns
+##### Returns
 
 `boolean`
 
-#### Inherited from
+##### Inherited from
+
+`HTMLElement.dispatchEvent`
+
+#### Call Signature
+
+> **dispatchEvent**(`event`): `boolean`
+
+Defined in: node\_modules/typescript/lib/lib.webworker.d.ts:4019
+
+The **`dispatchEvent()`** method of the EventTarget sends an Event to the object, (synchronously) invoking the affected event listeners in the appropriate order.
+
+[MDN Reference](https://developer.mozilla.org/docs/Web/API/EventTarget/dispatchEvent)
+
+##### Parameters
+
+###### event
+
+`Event`
+
+##### Returns
+
+`boolean`
+
+##### Inherited from
 
 `HTMLElement.dispatchEvent`
 

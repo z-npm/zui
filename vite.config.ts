@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitest/config'
 import dts from "vite-plugin-dts"
 import { libInjectCss } from "vite-plugin-lib-inject-css"
-import swc from "@z-code/vite-plugin-swc"
+import swc from "@o.z/vite-plugin-swc"
 import { resolve, relative, extname, dirname, basename } from 'node:path';
 import { glob } from 'glob';
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -128,5 +128,11 @@ export default defineConfig({
       include: ['src/lib/**/*.ts'],
     },
   },
+  worker: {
+    format: "es",
+    plugins() {
+      return [swc()]
+    },
+  }
 })
 

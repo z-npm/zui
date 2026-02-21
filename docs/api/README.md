@@ -25,7 +25,6 @@ class MyElement extends Zui(HTMLElement) {
 ## Classes
 
 - [EventEmitter](classes/EventEmitter.md)
-- [SafeHTML](classes/SafeHTML.md)
 
 ## Interfaces
 
@@ -46,10 +45,6 @@ class MyElement extends Zui(HTMLElement) {
 - [InferEventDetail](type-aliases/InferEventDetail.md)
 - [ZuiEventMap](type-aliases/ZuiEventMap.md)
 
-## Variables
-
-- [isBrowser](variables/isBrowser.md)
-
 ## Functions
 
 - [defineElement](functions/defineElement.md)
@@ -58,12 +53,6 @@ class MyElement extends Zui(HTMLElement) {
 - [property](functions/property.md)
 - [ref](functions/ref.md)
 - [state](functions/state.md)
-- [createElement](functions/createElement.md)
-- [html](functions/html.md)
-- [unsafeHTML](functions/unsafeHTML.md)
-- [delay](functions/delay.md)
-- [makeReactive](functions/makeReactive.md)
-- [toKebabCase](functions/toKebabCase.md)
 
 ## Events
 
