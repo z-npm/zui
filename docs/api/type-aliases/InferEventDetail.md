@@ -6,7 +6,7 @@
 
 > **InferEventDetail**\<`T`\> = `T` *extends* [`EventEmitter`](../classes/EventEmitter.md)\<infer U\> ? [`CustomEventDetail`](../interfaces/CustomEventDetail.md)\<`U`\> : `never`
 
-Defined in: [src/lib/decorators/types.ts:141](https://github.com/z-npm/zui/blob/7f1d66960688b03e03628842d4fb0c24590b68ab/src/lib/decorators/types.ts#L141)
+Defined in: [src/lib/decorators/types.ts:141](https://github.com/z-npm/zui/blob/6661d1446c04df5326fc8b0bf2e03e078c8d42f4/src/lib/decorators/types.ts#L141)
 
 Infers the CustomEvent detail type from an EventEmitter.
 

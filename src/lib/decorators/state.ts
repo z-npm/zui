@@ -77,7 +77,7 @@ export const state = ({ callbackName }: StateOptions = {}) => {
         const triggerUpdate = () => {
           queueMicrotask(() => {
             if (typeof zuiThis[updateMethodName] === 'function') {
-              zuiThis[updateMethodName](initialValue, initialValue)
+              zuiThis[updateMethodName](initialValue)
             }
           })
         }
@@ -99,7 +99,7 @@ export const state = ({ callbackName }: StateOptions = {}) => {
         const triggerUpdate = () => {
           queueMicrotask(() => {
             if (typeof zuiThis[updateMethodName] === 'function') {
-              zuiThis[updateMethodName](newValue, newValue)
+              zuiThis[updateMethodName](newValue)
             }
           })
         }

@@ -6,7 +6,7 @@
 
 > **Zui**\<`TBase`\>(`Base`): \{(...`args`): `ZuiElement`; `prototype`: `ZuiElement`\<`any`\>; \} & `TBase`
 
-Defined in: [src/lib/decorators/mixin.ts:45](https://github.com/z-npm/zui/blob/7f1d66960688b03e03628842d4fb0c24590b68ab/src/lib/decorators/mixin.ts#L45)
+Defined in: [src/lib/decorators/mixin.ts:45](https://github.com/z-npm/zui/blob/6661d1446c04df5326fc8b0bf2e03e078c8d42f4/src/lib/decorators/mixin.ts#L45)
 
 Mixin function that enhances base HTML elements with ZUI capabilities.
 

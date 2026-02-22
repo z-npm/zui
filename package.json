@@ -1,6 +1,6 @@
 {
   "name": "@o.z/zui",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Next-generation Web Component framework leveraging TypeScript Stage 3 standard decorators.",
   "homepage": "https://github.com/z-npm/zui#readme",
   "docs": "https://github.com/z-npm/zui#readme",
@@ -136,7 +136,7 @@
     }
   },
   "dependencies": {
-    "@o.z/utils": "^0.2.3"
+    "@o.z/utils": "^0.3.0"
   },
   "engines": {
     "node": ">=18.0.0",

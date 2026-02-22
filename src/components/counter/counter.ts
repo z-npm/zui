@@ -1,3 +1,4 @@
+import { Fetcher } from "@o.z/utils";
 import { defineElement, event, property, ref, EventEmitter, Zui, state } from "../../lib"
 import { fetch } from "../../lib/decorators/fetch";
 import htmlStr from "./counter.html?raw"
@@ -41,8 +42,8 @@ export class Counter extends Zui(HTMLDivElement) {
   counterClick!: EventEmitter<CounterClickEvent>
 
   @fetch({
+    autoRefetch: false,
     url: "https://jsonplaceholder.typicode.com/users",
-    autoFetch: false,
     onError(error) {
       console.log("e:", error);
     },
@@ -53,13 +54,13 @@ export class Counter extends Zui(HTMLDivElement) {
       console.log("l:", isLoading);
     },
   })
-  users: any
+  users!: Fetcher<any>
 
   constructor() {
     super()
 
     setTimeout(() => {
-      (this as any).refetchUsers?.()
+      this.users.reFetch()
     }, 3000);
   }
 
@@ -88,7 +89,7 @@ export class Counter extends Zui(HTMLDivElement) {
   //Typescript should give error for below function becase of type(shoild be boolien) 
   // isGoodUpdate(o: string, n: string) { }
 
-  historyUpdate(_oldHist: number[], newHist: number[]) {
+  historyUpdate(newHist: number[]) {
     this.historyRef.textContent = newHist.slice(-5).join(", ")
   }
 

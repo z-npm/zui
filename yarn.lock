@@ -619,12 +619,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@o.z/utils@npm:^0.2.3":
-  version: 0.2.3
-  resolution: "@o.z/utils@npm:0.2.3"
+"@o.z/utils@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "@o.z/utils@npm:0.3.0"
   dependencies:
     csstype: "npm:^3.2.3"
-  checksum: 10c0/caba06453704b08617d19faae0877f47e1e14b52257c77992f286e69ea8f107666ebabccc4e29debce65e14c893db6d9774a66b8981de7f0bde92a95e69e7cd4
+  checksum: 10c0/dc5fea54a318c1f59396b74b484991e16c9045b90bee60f06c1e5d94c1346e4d0e6657c24ebd50a5e81b477631df0b3e520181235bb45c0217da3099dc3fef85
   languageName: node
   linkType: hard
 
@@ -650,7 +650,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@o.z/zui@workspace:."
   dependencies:
-    "@o.z/utils": "npm:^0.2.3"
+    "@o.z/utils": "npm:^0.3.0"
     "@o.z/vite-plugin-swc": "npm:^0.6.1"
     "@testing-library/dom": "npm:^10.4.1"
     "@testing-library/user-event": "npm:^14.6.1"
