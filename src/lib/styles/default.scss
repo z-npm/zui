@@ -1,0 +1,49 @@
+/* ========================================
+ZUI Component Styles - Material Design
+Applies to native HTML elements without classes
+======================================== */
+
+body {
+  background-color: var(--zui-color-background);
+  color: var(--zui-color-text-primary);
+}
+
+/* ========================================
+TABLE
+======================================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  font-family: var(--zui-font-family);
+  font-size: var(--zui-font-size-md);
+
+  th,
+  td {
+    padding: var(--zui-space-sm) var(--zui-space-md);
+    text-align: left;
+    border-bottom: 1px solid var(--zui-color-outline-variant);
+  }
+
+  th {
+    font-weight: var(--zui-font-weight-medium);
+    color: var(--zui-color-text-secondary);
+    background-color: var(--zui-color-surface-variant);
+  }
+
+  tr {
+    transition: background-color var(--zui-transition-colors);
+
+    &:hover {
+      background-color: var(--zui-state-layer-hover);
+    }
+  }
+}
+
+// zero sulotion
+.table-container {
+  overflow-x: auto;
+  width: calc(100% - var(--zui-space-md));
+  margin-inline: auto;
+  margin-block: var(--zui-space-md);
+}

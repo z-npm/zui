@@ -6,7 +6,7 @@
 
 > **property**(`options?`): \<`T`, `V`\>(`_accessor`, `context`) => `object`
 
-Defined in: [src/lib/decorators/property.ts:77](https://github.com/z-npm/zui/blob/6661d1446c04df5326fc8b0bf2e03e078c8d42f4/src/lib/decorators/property.ts#L77)
+Defined in: [src/lib/decorators/property.ts:77](https://github.com/z-npm/zui/blob/8343ddbfb68b96e237a63bf86f35f8e5fcf64328/src/lib/decorators/property.ts#L77)
 
 Accessor decorator that creates reactive properties synchronized with DOM attributes.
 

@@ -1,0 +1,220 @@
+/**
+ * ZUI Theme Tokens
+ * 
+ * Color token naming and structure inspired by Material Design 3
+ * @see https://github.com/material-components/material-web
+ * @license Apache-2.0 (for token concepts/names)
+ * 
+ * This project is licensed under GPL-3.0-only.
+ * Material Design token names are used under Apache 2.0 terms with attribution.
+ */
+
+@mixin light-theme {
+  /* Primary palette */
+  --zui-color-primary: #6750a4;
+  --zui-color-on-primary: #ffffff;
+  --zui-color-primary-container: #eaddff;
+  --zui-color-on-primary-container: #21005d;
+  --zui-color-primary-hover: #7f67be;
+  --zui-color-primary-active: #4f378b;
+
+  /* Secondary palette */
+  --zui-color-secondary: #625b71;
+  --zui-color-on-secondary: #ffffff;
+  --zui-color-secondary-container: #e8def8;
+  --zui-color-on-secondary-container: #1d192b;
+
+  /* Error palette */
+  --zui-color-error: #b3261e;
+  --zui-color-on-error: #ffffff;
+  --zui-color-error-container: #f9dedc;
+  --zui-color-on-error-container: #410e0b;
+
+  /* Surface/Background */
+  --zui-color-surface: #ffffff;
+  --zui-color-on-surface: #1c1b1f;
+  --zui-color-surface-variant: #e7e0ec;
+  --zui-color-on-surface-variant: #49454f;
+  --zui-color-background: #fdfcff;
+  --zui-color-on-background: #1c1b1f;
+
+  /* Outline & Border */
+  --zui-color-outline: #79747e;
+  --zui-color-outline-variant: #cac4d0;
+  --zui-color-border: #cac4d0;
+
+  /* Text */
+  --zui-color-text-primary: #1c1b1f;
+  --zui-color-text-secondary: #49454f;
+  --zui-color-text-disabled: #938f99;
+  --zui-color-text-placeholder: #79747e;
+
+  /* Elevation & Shadows */
+  --zui-shadow-none: none;
+  --zui-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --zui-shadow-md: 0 2px 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
+  --zui-shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+  --zui-shadow-xl: 0 8px 16px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  /* States & Interactions */
+  --zui-state-layer-hover: rgba(0, 0, 0, 0.04);
+  --zui-state-layer-focus: rgba(0, 0, 0, 0.08);
+  --zui-state-layer-active: rgba(0, 0, 0, 0.12);
+  --zui-state-layer-disabled: rgba(0, 0, 0, 0.04);
+}
+
+@mixin dark-theme {
+  /* Primary palette */
+  --zui-color-primary: #d0bcff;
+  --zui-color-on-primary: #381e72;
+  --zui-color-primary-container: #4f378b;
+  --zui-color-on-primary-container: #eaddff;
+  --zui-color-primary-hover: #b6a2e5;
+  --zui-color-primary-active: #9a82db;
+
+  /* Secondary palette */
+  --zui-color-secondary: #cbc2db;
+  --zui-color-on-secondary: #332d41;
+  --zui-color-secondary-container: #4a4458;
+  --zui-color-on-secondary-container: #e8def8;
+
+  /* Error palette */
+  --zui-color-error: #f2b8b5;
+  --zui-color-on-error: #601410;
+  --zui-color-error-container: #8c1d18;
+  --zui-color-on-error-container: #f9dedc;
+
+  /* Surface/Background */
+  --zui-color-surface: #1c1b1f;
+  --zui-color-on-surface: #e6e1e5;
+  --zui-color-surface-variant: #49454f;
+  --zui-color-on-surface-variant: #cac4d0;
+  --zui-color-background: #1c1b1f;
+  --zui-color-on-background: #e6e1e5;
+
+  /* Outline & Border */
+  --zui-color-outline: #938f99;
+  --zui-color-outline-variant: #49454f;
+  --zui-color-border: #49454f;
+
+  /* Text */
+  --zui-color-text-primary: #e6e1e5;
+  --zui-color-text-secondary: #cac4d0;
+  --zui-color-text-disabled: #49454f;
+  --zui-color-text-placeholder: #938f99;
+
+  /* Elevation & Shadows */
+  --zui-shadow-none: none;
+  --zui-shadow-sm: 0 1px 2px rgba(255, 255, 255, 0.05);
+  --zui-shadow-md:
+    0 2px 4px rgba(255, 255, 255, 0.08), 0 1px 2px rgba(255, 255, 255, 0.05);
+  --zui-shadow-lg:
+    0 4px 8px rgba(255, 255, 255, 0.1), 0 2px 4px rgba(255, 255, 255, 0.08);
+  --zui-shadow-xl:
+    0 8px 16px rgba(255, 255, 255, 0.12), 0 4px 8px rgba(255, 255, 255, 0.1);
+
+  /* States & Interactions */
+  --zui-state-layer-hover: rgba(255, 255, 255, 0.08);
+  --zui-state-layer-focus: rgba(255, 255, 255, 0.12);
+  --zui-state-layer-active: rgba(255, 255, 255, 0.16);
+  --zui-state-layer-disabled: rgba(255, 255, 255, 0.04);
+}
+
+@mixin color-scheme {
+  @include light-theme;
+
+  @media (prefers-color-scheme: dark) {
+    @include dark-theme;
+  }
+}
+
+:root {
+  @include color-scheme;
+
+  /* ========================================
+  TYPOGRAPHY SCALE
+  ======================================== */
+  --zui-font-family: "Roboto", system-ui, -apple-system, sans-serif;
+  --zui-font-size-xs: 0.625rem; /* 10px */
+  --zui-font-size-sm: 0.75rem; /* 12px */
+  --zui-font-size-md: 0.875rem; /* 14px */
+  --zui-font-size-lg: 1rem; /* 16px */
+  --zui-font-size-xl: 1.125rem; /* 18px */
+  --zui-font-size-2xl: 1.25rem; /* 20px */
+
+  --zui-font-weight-normal: 400;
+  --zui-font-weight-medium: 500;
+  --zui-font-weight-semibold: 600;
+
+  --zui-line-height-tight: 1.25;
+  --zui-line-height-normal: 1.5;
+  --zui-line-height-relaxed: 1.75;
+
+  /* ========================================
+  SPACING & LAYOUT
+  ======================================== */
+  --zui-space-xxs: 0.25rem; /* 4px */
+  --zui-space-xs: 0.5rem; /* 8px */
+  --zui-space-sm: 0.75rem; /* 12px */
+  --zui-space-md: 1rem; /* 16px */
+  --zui-space-lg: 1.5rem; /* 24px */
+  --zui-space-xl: 2rem; /* 32px */
+  --zui-space-2xl: 3rem; /* 48px */
+
+  /* ========================================
+  BORDER RADII
+  ======================================== */
+  --zui-radius-none: 0;
+  --zui-radius-xs: 4px;
+  --zui-radius-sm: 8px;
+  --zui-radius-md: 12px;
+  --zui-radius-lg: 16px;
+  --zui-radius-xl: 24px;
+  --zui-radius-full: 9999px;
+
+  /* ========================================
+  ELEVATION & SHADOWS
+  ======================================== */
+  --zui-shadow-none: none;
+  --zui-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --zui-shadow-md: 0 2px 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05);
+  --zui-shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05);
+  --zui-shadow-xl: 0 8px 16px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
+
+  /* ========================================
+  STATES & INTERACTIONS
+  ======================================== */
+  --zui-state-layer-hover: rgba(0, 0, 0, 0.04);
+  --zui-state-layer-focus: rgba(0, 0, 0, 0.08);
+  --zui-state-layer-active: rgba(0, 0, 0, 0.12);
+  --zui-state-layer-disabled: rgba(0, 0, 0, 0.04);
+
+  --zui-opacity-disabled: 0.38;
+  --zui-opacity-placeholder: 0.6;
+
+  /* ========================================
+  MOTION & TRANSITIONS
+  ======================================== */
+  --zui-motion-duration-fast: 75ms;
+  --zui-motion-duration-normal: 150ms;
+  --zui-motion-duration-slow: 300ms;
+
+  /* ========================================
+  Z-INDEX LAYERS
+  ======================================== */
+  --zui-zindex-dropdown: 1000;
+  --zui-zindex-sticky: 1020;
+  --zui-zindex-fixed: 1030;
+  --zui-zindex-modal-backdrop: 1040;
+  --zui-zindex-modal: 1050;
+  --zui-zindex-popover: 1060;
+  --zui-zindex-tooltip: 1070;
+}
+
+[data-theme="light"] {
+  @include light-theme;
+}
+
+[data-theme="dark"] {
+  @include dark-theme;
+}

@@ -6,7 +6,7 @@
 
 > **ZuiEventMap**\<`T`\> = `{ [K in keyof T as T[K] extends EventEmitter<any> ? KebabCase<string & K> : never]: InferEventDetail<T[K]> }`
 
-Defined in: [src/lib/decorators/types.ts:156](https://github.com/z-npm/zui/blob/6661d1446c04df5326fc8b0bf2e03e078c8d42f4/src/lib/decorators/types.ts#L156)
+Defined in: [src/lib/decorators/types.ts:156](https://github.com/z-npm/zui/blob/8343ddbfb68b96e237a63bf86f35f8e5fcf64328/src/lib/decorators/types.ts#L156)
 
 Maps component event properties to their corresponding event types.
 
