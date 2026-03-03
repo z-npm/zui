@@ -2,10 +2,128 @@
 ZUI Component Styles - Material Design
 Applies to native HTML elements without classes
 ======================================== */
-
 body {
+  font-family: var(--zui-font-family);
   background-color: var(--zui-color-background);
   color: var(--zui-color-text-primary);
+}
+
+/* ========================================
+BUTTON
+======================================== */
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  font-family: var(--zui-font-family);
+  font-size: var(--zui-font-size-md);
+  font-weight: var(--zui-font-weight-medium);
+  line-height: var(--zui-line-height-normal);
+  text-align: center;
+  padding-inline: var(--zui-space-md);
+  padding-block: var(--zui-space-sm);
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: var(--zui-radius-md);
+  background-color: var(--zui-color-primary);
+  color: var(--zui-color-on-primary);
+
+  &:hover {
+    background-color: var(--zui-color-primary-hover);
+  }
+
+  &:active {
+    background-color: var(--zui-color-primary-active);
+    transform: scale(0.98);
+  }
+
+  &:disabled,
+  &[disabled] {
+    background-color: var(--zui-state-layer-disabled);
+    color: var(--zui-color-text-disable);
+    cursor: not-allowed;
+    pointer-events: none;
+    transform: none;
+
+    &:hover {
+      background-color: var(--zui-state-layer-disabled);
+    }
+  }
+}
+
+/* Secondary Button Variant */
+button.secondary,
+input[type="button"].secondary,
+input[type="submit"].secondary,
+input[type="reset"].secondary {
+  background-color: var(--zui-color-secondary-container);
+  color: var(--zui-color-on-secondary-container);
+
+  &:hover {
+    background-color: var(--zui-color-secondary);
+    color: var(--zui-color-on-secondary);
+  }
+
+  &:active {
+    background-color: var(--zui-color-secondary-container);
+  }
+}
+
+/* Outline Button Variant */
+button.outline,
+input[type="button"].outline,
+input[type="submit"].outline,
+input[type="reset"].outline {
+  background-color: transparent;
+  border-color: var(--zui-color-outline);
+  color: var(--zui-color-primary);
+
+  &:hover {
+    background-color: var(--zui-state-layer-hover);
+    border-color: var(--zui-color-primary);
+  }
+
+  &:active {
+    background-color: var(--zui-state-layer-active);
+  }
+}
+
+/* Text Button Variant */
+button.text,
+input[type="button"].text,
+input[type="submit"].text,
+input[type="reset"].text {
+  background-color: transparent;
+  color: var(--zui-color-primary);
+  box-shadow: none;
+
+  &:hover {
+    background-color: var(--zui-state-layer-hover);
+  }
+
+  &:active {
+    background-color: var(--zui-state-layer-active);
+  }
+}
+
+/* Danger Button Variant */
+button.danger,
+input[type="button"].danger,
+input[type="submit"].danger,
+input[type="reset"].danger {
+  background-color: var(--zui-color-error-container);
+  color: var(--zui-color-on-error-container);
+
+  &:hover {
+    background-color: var(--zui-color-error);
+    color: var(--zui-color-on-error);
+  }
+
+  &:active {
+    background-color: var(--zui-color-error-container);
+  }
 }
 
 /* ========================================
@@ -14,7 +132,6 @@ TABLE
 table {
   width: 100%;
   border-collapse: collapse;
-
   font-family: var(--zui-font-family);
   font-size: var(--zui-font-size-md);
 
@@ -40,7 +157,9 @@ table {
   }
 }
 
-// zero sulotion
+/* ========================================
+zero-solution: TABLE CONTAINER
+======================================== */
 .table-container {
   overflow-x: auto;
   width: calc(100% - var(--zui-space-md));

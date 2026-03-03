@@ -1,6 +1,6 @@
 {
   "name": "@o.z/zui",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Next-generation Web Component framework leveraging TypeScript Stage 3 standard decorators.",
   "homepage": "https://github.com/z-npm/zui#readme",
   "docs": "https://github.com/z-npm/zui#readme",
@@ -65,11 +65,11 @@
     "@testing-library/dom": "^10.4.1",
     "@testing-library/user-event": "^14.6.1",
     "@types/jsdom": "^28.0.0",
-    "@types/node": "^25.3.2",
+    "@types/node": "^25.3.3",
     "@vitest/coverage-v8": "^4.0.18",
     "@vitest/ui": "^4.0.18",
     "glob": "^13.0.6",
-    "globals": "^17.3.0",
+    "globals": "^17.4.0",
     "jsdom": "^28.1.0",
     "sass": "^1.97.3",
     "typedoc": "^0.28.17",
@@ -146,5 +146,5 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "packageManager": "yarn@4.12.0"
+  "packageManager": "yarn@4.13.0"
 }

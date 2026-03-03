@@ -84,15 +84,18 @@ time,
 mark,
 audio,
 video {
+  max-width: 100%;
   margin: 0;
   padding: 0;
   border: none;
+  outline: none;
+  box-shadow: none;
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  max-width: 100%;
   text-decoration: none;
   color: inherit;
+  background-color: inherit;
 }
 body {
   width: 100%;
