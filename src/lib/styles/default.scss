@@ -9,6 +9,61 @@ body {
 }
 
 /* ========================================
+PROGRESS BAR
+======================================== */
+progress {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  height: 0.5rem;
+  background-color: var(--zui-color-surface-variant);
+  color: var(--zui-color-primary);
+  border: none;
+  border-radius: var(--zui-radius-full);
+
+  /* WebKit track */
+  &::-webkit-progress-bar {
+    background-color: var(--zui-color-surface-variant);
+    border-radius: var(--zui-radius-full);
+  }
+
+  /* Firefox track */
+  &::-moz-progress-bar {
+    background-color: var(--zui-color-surface-variant);
+    border-radius: var(--zui-radius-full);
+  }
+
+  /* WebKit value */
+  &::-webkit-progress-value {
+    background-color: var(--zui-color-primary);
+    border-radius: var(--zui-radius-full);
+    transition: width var(--zui-motion-duration-normal) ease;
+  }
+
+  /* Firefox value */
+  &::-moz-progress-value {
+    background-color: var(--zui-color-primary);
+    border-radius: var(--zui-radius-full);
+    transition: width var(--zui-motion-duration-normal) ease;
+  }
+
+  &.secondary {
+    color: var(--zui-color-secondary);
+
+    /* WebKit value */
+    &::-webkit-progress-value {
+      background-color: var(--zui-color-secondary);
+    }
+
+    /* Firefox value */
+    &::-moz-progress-value {
+      background-color: var(--zui-color-secondary);
+    }
+  }
+}
+
+/* ========================================
 CHECKBOX
 ======================================== */
 input[type="checkbox"] {
@@ -18,7 +73,7 @@ input[type="checkbox"] {
   min-width: 1.25rem;
   min-height: 1.25rem;
   border: 2px solid var(--zui-color-outline);
-  border-radius: var(--zui-radius-xs); /* slightly rounded corners */
+  border-radius: var(--zui-radius-xs);
   background-color: var(--zui-color-surface);
   margin-block: var(--zui-space-xs);
   vertical-align: middle;
@@ -75,25 +130,24 @@ input[type="checkbox"] {
       }
     }
   }
-}
 
-/* Secondary Checkbox Button Variant */
-input[type="checkbox"].secondary {
-  &:hover {
-    border-color: var(--zui-color-secondary-container);
-  }
-
-  &:checked {
-    border-color: var(--zui-color-secondary);
-    background-color: var(--zui-color-secondary);
-
-    &::after {
+  &.secondary {
+    &:hover {
       border-color: var(--zui-color-secondary-container);
     }
-  }
 
-  &:focus-visible {
-    outline: 2px solid var(--zui-color-secondary);
+    &:checked {
+      border-color: var(--zui-color-secondary);
+      background-color: var(--zui-color-secondary);
+
+      &::after {
+        border-color: var(--zui-color-secondary-container);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--zui-color-secondary);
+    }
   }
 }
 
@@ -157,23 +211,22 @@ input[type="radio"] {
       background-color: var(--zui-color-outline-variant);
     }
   }
-}
 
-/* Secondary RADIO Button Variant */
-input[type="radio"].secondary {
-  &:hover {
-    border-color: var(--zui-color-secondary-container);
-  }
-
-  &:checked {
-    border-color: var(--zui-color-secondary);
-    &::after {
-      background-color: var(--zui-color-secondary);
+  &.secondary {
+    &:hover {
+      border-color: var(--zui-color-secondary-container);
     }
-  }
 
-  &:focus-visible {
-    outline: 2px solid var(--zui-color-secondary);
+    &:checked {
+      border-color: var(--zui-color-secondary);
+      &::after {
+        background-color: var(--zui-color-secondary);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--zui-color-secondary);
+    }
   }
 }
 
@@ -220,78 +273,62 @@ input[type="reset"] {
       background-color: var(--zui-state-layer-disabled);
     }
   }
-}
 
-/* Secondary Button Variant */
-button.secondary,
-input[type="button"].secondary,
-input[type="submit"].secondary,
-input[type="reset"].secondary {
-  background-color: var(--zui-color-secondary-container);
-  color: var(--zui-color-on-secondary-container);
-
-  &:hover {
-    background-color: var(--zui-color-secondary);
-    color: var(--zui-color-on-secondary);
-  }
-
-  &:active {
+  &.secondary {
     background-color: var(--zui-color-secondary-container);
-  }
-}
+    color: var(--zui-color-on-secondary-container);
 
-/* Outline Button Variant */
-button.outline,
-input[type="button"].outline,
-input[type="submit"].outline,
-input[type="reset"].outline {
-  background-color: transparent;
-  border-color: var(--zui-color-outline);
-  color: var(--zui-color-primary);
+    &:hover {
+      background-color: var(--zui-color-secondary);
+      color: var(--zui-color-on-secondary);
+    }
 
-  &:hover {
-    background-color: var(--zui-state-layer-hover);
-    border-color: var(--zui-color-primary);
+    &:active {
+      background-color: var(--zui-color-secondary-container);
+    }
   }
 
-  &:active {
-    background-color: var(--zui-state-layer-active);
-  }
-}
+  &.outline {
+    background-color: transparent;
+    border-color: var(--zui-color-outline);
+    color: var(--zui-color-primary);
 
-/* Text Button Variant */
-button.text,
-input[type="button"].text,
-input[type="submit"].text,
-input[type="reset"].text {
-  background-color: transparent;
-  color: var(--zui-color-primary);
-  box-shadow: none;
+    &:hover {
+      background-color: var(--zui-state-layer-hover);
+      border-color: var(--zui-color-primary);
+    }
 
-  &:hover {
-    background-color: var(--zui-state-layer-hover);
+    &:active {
+      background-color: var(--zui-state-layer-active);
+    }
   }
 
-  &:active {
-    background-color: var(--zui-state-layer-active);
-  }
-}
+  &.text {
+    background-color: transparent;
+    color: var(--zui-color-primary);
+    box-shadow: none;
 
-/* Danger Button Variant */
-button.danger,
-input[type="button"].danger,
-input[type="submit"].danger,
-input[type="reset"].danger {
-  background-color: var(--zui-color-error-container);
-  color: var(--zui-color-on-error-container);
+    &:hover {
+      background-color: var(--zui-state-layer-hover);
+    }
 
-  &:hover {
-    background-color: var(--zui-color-error);
-    color: var(--zui-color-on-error);
+    &:active {
+      background-color: var(--zui-state-layer-active);
+    }
   }
 
-  &:active {
+  &.danger {
     background-color: var(--zui-color-error-container);
+    color: var(--zui-color-on-error-container);
+
+    &:hover {
+      background-color: var(--zui-color-error);
+      color: var(--zui-color-on-error);
+    }
+
+    &:active {
+      background-color: var(--zui-color-error-container);
+    }
   }
 }
 
