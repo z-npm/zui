@@ -9,6 +9,95 @@ body {
 }
 
 /* ========================================
+CHECKBOX
+======================================== */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  min-width: 1.25rem;
+  min-height: 1.25rem;
+  border: 2px solid var(--zui-color-outline);
+  border-radius: var(--zui-radius-xs); /* slightly rounded corners */
+  background-color: var(--zui-color-surface);
+  margin-block: var(--zui-space-xs);
+  vertical-align: middle;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  transition:
+    border-color var(--zui-motion-duration-normal) ease,
+    background-color var(--zui-motion-duration-normal) ease;
+
+  &:hover {
+    border-color: var(--zui-color-primary-hover);
+    background-color: var(--zui-state-layer-hover);
+  }
+
+  &:checked {
+    border-color: var(--zui-color-primary);
+    background-color: var(--zui-color-primary);
+
+    &::after {
+      content: "";
+      display: block;
+      min-width: 0.375rem;
+      min-height: 0.75rem;
+      border-style: solid;
+      border-color: var(--zui-color-on-primary);
+      border-width: 0 2px 2px 0;
+      position: absolute;
+      inset-block-start: 50%;
+      inset-inline-start: 50%;
+      transform: translate(-50%, -60%) rotate(45deg);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--zui-color-primary);
+    outline-offset: 2px;
+  }
+
+  &:disabled,
+  &[disabled] {
+    border-color: var(--zui-color-outline-variant);
+    background-color: var(--zui-state-layer-disabled);
+    cursor: not-allowed;
+    pointer-events: none;
+    transform: none;
+
+    &:checked {
+      background-color: var(--zui-color-outline-variant);
+      border-color: var(--zui-color-outline-variant);
+
+      &::after {
+        border-color: var(--zui-color-surface);
+      }
+    }
+  }
+}
+
+/* Secondary Checkbox Button Variant */
+input[type="checkbox"].secondary {
+  &:hover {
+    border-color: var(--zui-color-secondary-container);
+  }
+
+  &:checked {
+    border-color: var(--zui-color-secondary);
+    background-color: var(--zui-color-secondary);
+
+    &::after {
+      border-color: var(--zui-color-secondary-container);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--zui-color-secondary);
+  }
+}
+
+/* ========================================
 RADIO BUTTON
 ======================================== */
 input[type="radio"] {
@@ -21,8 +110,8 @@ input[type="radio"] {
   border-radius: var(--zui-radius-full);
   background-color: var(--zui-color-surface);
   margin-block: var(--zui-space-xs);
-
   vertical-align: middle;
+  user-select: none;
   cursor: pointer;
   position: relative;
   transition:
@@ -56,14 +145,35 @@ input[type="radio"] {
     outline-offset: 2px;
   }
 
-  &:disabled {
+  &:disabled,
+  &[disabled] {
     border-color: var(--zui-color-outline-variant);
     background-color: var(--zui-state-layer-disabled);
     cursor: not-allowed;
+    pointer-events: none;
+    transform: none;
 
     &:checked::after {
       background-color: var(--zui-color-outline-variant);
     }
+  }
+}
+
+/* Secondary RADIO Button Variant */
+input[type="radio"].secondary {
+  &:hover {
+    border-color: var(--zui-color-secondary-container);
+  }
+
+  &:checked {
+    border-color: var(--zui-color-secondary);
+    &::after {
+      background-color: var(--zui-color-secondary);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--zui-color-secondary);
   }
 }
 
@@ -101,7 +211,7 @@ input[type="reset"] {
   &:disabled,
   &[disabled] {
     background-color: var(--zui-state-layer-disabled);
-    color: var(--zui-color-text-disable);
+    color: var(--zui-color-outline-variant);
     cursor: not-allowed;
     pointer-events: none;
     transform: none;
