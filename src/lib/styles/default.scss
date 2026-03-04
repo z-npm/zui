@@ -9,6 +9,152 @@ body {
 }
 
 /* ========================================
+SELECT
+======================================== */
+select {
+  font-family: var(--zui-font-family);
+  font-size: var(--zui-font-size-md);
+  line-height: var(--zui-line-height-normal);
+  padding-inline: var(--zui-space-sm);
+  padding-block: var(--zui-space-md);
+  padding-inline-end: calc(var(--zui-space-md) * 2.5);
+  border: 1px solid var(--zui-color-outline);
+  border-radius: var(--zui-radius-sm);
+  background-color: var(--zui-color-surface);
+  color: var(--zui-color-text-primary);
+  transition:
+    border-color var(--zui-motion-duration-normal) ease,
+    background-color var(--zui-motion-duration-normal) ease,
+    box-shadow var(--zui-motion-duration-normal) ease;
+  box-sizing: border-box;
+  width: auto;
+  min-height: 2.5rem;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2379747e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--zui-space-sm) center;
+  background-size: 1rem;
+
+  &:hover {
+    border-color: var(--zui-color-primary-hover);
+    background-color: var(--zui-state-layer-hover);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--zui-color-primary);
+    outline-offset: 2px;
+  }
+
+  &:disabled,
+  &[disabled] {
+    background-color: var(--zui-state-layer-disabled);
+    border-color: var(--zui-color-outline-variant);
+    color: var(--zui-color-text-disabled);
+    cursor: not-allowed;
+    pointer-events: none;
+    transform: none;
+  }
+
+  &.secondary {
+    color: var(--zui-color-text-secondary);
+
+    &:hover {
+      border-color: var(--zui-color-secondary-container);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--zui-color-secondary);
+    }
+  }
+}
+
+/* ========================================
+DATE, TIME, COLOR INPUTS
+======================================== */
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="color"] {
+  font-family: var(--zui-font-family);
+  font-size: var(--zui-font-size-md);
+  line-height: var(--zui-line-height-normal);
+  padding-inline: var(--zui-space-sm);
+  padding-block: var(--zui-space-md);
+  border: 1px solid var(--zui-color-outline);
+  border-radius: var(--zui-radius-sm);
+  background-color: var(--zui-color-surface);
+  color: var(--zui-color-text-primary);
+  transition:
+    border-color var(--zui-motion-duration-normal) ease,
+    background-color var(--zui-motion-duration-normal) ease,
+    box-shadow var(--zui-motion-duration-normal) ease;
+  box-sizing: border-box;
+  width: auto;
+  min-height: 2.5rem;
+
+  &:hover {
+    border-color: var(--zui-color-primary-hover);
+    background-color: var(--zui-state-layer-hover);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--zui-color-primary);
+    outline-offset: 2px;
+  }
+
+  &:disabled,
+  &[disabled] {
+    background-color: var(--zui-state-layer-disabled);
+    border-color: var(--zui-color-outline-variant);
+    color: var(--zui-color-text-disabled);
+    cursor: not-allowed;
+    pointer-events: none;
+    transform: none;
+  }
+
+  &.secondary {
+    color: var(--zui-color-text-secondary);
+
+    &:hover {
+      border-color: var(--zui-color-secondary-container);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--zui-color-secondary);
+    }
+  }
+}
+
+input[type="color"] {
+  padding: var(--zui-space-xxs);
+  min-width: 3.5rem;
+  cursor: pointer;
+
+  &::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+
+  &::-moz-color-swatch-wrapper {
+    padding: 0;
+  }
+
+  &::-webkit-color-swatch {
+    border: none;
+    border-radius: var(--zui-radius-xs);
+  }
+
+  &::-moz-color-swatch {
+    border: none;
+    border-radius: var(--zui-radius-xs);
+  }
+}
+
+/* ========================================
 PROGRESS BAR
 ======================================== */
 progress {
