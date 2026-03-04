@@ -9,6 +9,65 @@ body {
 }
 
 /* ========================================
+RADIO BUTTON
+======================================== */
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  min-width: 1.25rem;
+  min-height: 1.25rem;
+  border: 2px solid var(--zui-color-outline);
+  border-radius: var(--zui-radius-full);
+  background-color: var(--zui-color-surface);
+  margin-block: var(--zui-space-xs);
+
+  vertical-align: middle;
+  cursor: pointer;
+  position: relative;
+  transition:
+    border-color var(--zui-motion-duration-normal) ease,
+    background-color var(--zui-motion-duration-normal) ease;
+
+  &:hover {
+    border-color: var(--zui-color-primary-hover);
+    background-color: var(--zui-state-layer-hover);
+  }
+
+  &:checked {
+    border-color: var(--zui-color-primary);
+
+    &::after {
+      content: "";
+      display: block;
+      min-width: 0.625rem;
+      min-height: 0.625rem;
+      border-radius: var(--zui-radius-full);
+      background-color: var(--zui-color-primary);
+      position: absolute;
+      inset-block-start: 50%;
+      inset-inline-start: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--zui-color-primary);
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    border-color: var(--zui-color-outline-variant);
+    background-color: var(--zui-state-layer-disabled);
+    cursor: not-allowed;
+
+    &:checked::after {
+      background-color: var(--zui-color-outline-variant);
+    }
+  }
+}
+
+/* ========================================
 BUTTON
 ======================================== */
 button,
