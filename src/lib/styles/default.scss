@@ -9,6 +9,114 @@ body {
 }
 
 /* ========================================
+FILE INPUT
+======================================== */
+input[type="file"] {
+  font-family: var(--zui-font-family);
+  font-size: var(--zui-font-size-md);
+  line-height: var(--zui-line-height-normal);
+  padding-inline: var(--zui-space-sm);
+  padding-block: var(--zui-space-sm);
+  border: 1px dashed var(--zui-color-outline);
+  border-radius: var(--zui-radius-sm);
+  background-color: var(--zui-color-surface);
+  color: var(--zui-color-text-primary);
+  transition:
+    border-color var(--zui-motion-duration-normal) ease,
+    background-color var(--zui-motion-duration-normal) ease,
+    box-shadow var(--zui-motion-duration-normal) ease;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 3rem;
+  cursor: pointer;
+  position: relative;
+
+  &::file-selector-button {
+    font-family: var(--zui-font-family);
+    font-size: var(--zui-font-size-sm);
+    font-weight: var(--zui-font-weight-medium);
+    padding-inline: var(--zui-space-md);
+    padding-block: var(--zui-space-sm);
+    margin-inline-end: var(--zui-space-sm);
+    border: 1px solid var(--zui-color-outline);
+    border-radius: var(--zui-radius-sm);
+    background-color: var(--zui-color-surface-variant);
+    color: var(--zui-color-text-primary);
+    cursor: pointer;
+    transition:
+      background-color var(--zui-motion-duration-normal) ease,
+      border-color var(--zui-motion-duration-normal) ease;
+
+    &:hover {
+      background-color: var(--zui-state-layer-hover);
+      border-color: var(--zui-color-primary-hover);
+    }
+
+    &:active {
+      background-color: var(--zui-state-layer-active);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--zui-color-primary);
+      outline-offset: 2px;
+    }
+
+    &:disabled {
+      background-color: var(--zui-state-layer-disabled);
+      border-color: var(--zui-color-outline-variant);
+      color: var(--zui-color-text-disabled);
+      cursor: not-allowed;
+    }
+  }
+
+  &:hover {
+    border-color: var(--zui-color-primary-hover);
+    background-color: var(--zui-state-layer-hover);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--zui-color-primary);
+    outline-offset: 2px;
+    border-style: solid;
+  }
+
+  &:disabled,
+  &[disabled] {
+    background-color: var(--zui-state-layer-disabled);
+    border-color: var(--zui-color-outline-variant);
+    color: var(--zui-color-text-disabled);
+    cursor: not-allowed;
+    pointer-events: none;
+
+    &::file-selector-button {
+      background-color: var(--zui-state-layer-disabled);
+      border-color: var(--zui-color-outline-variant);
+      color: var(--zui-color-text-disabled);
+      cursor: not-allowed;
+    }
+  }
+
+  &.secondary {
+    border-color: var(--zui-color-secondary-container);
+
+    &::file-selector-button {
+      background-color: var(--zui-color-secondary-container);
+      color: var(--zui-color-on-secondary-container);
+      border-color: var(--zui-color-secondary);
+
+      &:hover {
+        background-color: var(--zui-color-secondary);
+        color: var(--zui-color-on-secondary);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--zui-color-secondary);
+    }
+  }
+}
+
+/* ========================================
 TEXTAREA
 ======================================== */
 textarea {
@@ -26,6 +134,7 @@ textarea {
     background-color var(--zui-motion-duration-normal) ease,
     box-shadow var(--zui-motion-duration-normal) ease;
   box-sizing: border-box;
+  width: 100%;
   min-height: 6rem;
   resize: vertical;
   cursor: text;
