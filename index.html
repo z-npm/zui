@@ -207,15 +207,17 @@ function hello() {
                   <option value="4">Option 4</option>
                 </select>
               </div>
-              <div>
-                <label for="textarea">Textarea:</label>
-                <textarea
-                  id="textarea"
-                  name="textarea"
-                  rows="4"
-                  placeholder="Enter multiple lines..."
-                ></textarea>
-              </div>
+              <!-- Basic Textarea -->
+              <textarea placeholder="Enter your message..."></textarea>
+
+              <!-- Secondary Variant -->
+              <textarea
+                class="secondary"
+                placeholder="Secondary style"
+              ></textarea>
+
+              <!-- Disabled State -->
+              <textarea disabled>Cannot edit this</textarea>
             </fieldset>
 
             <fieldset>
