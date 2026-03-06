@@ -9,6 +9,273 @@ body {
 }
 
 /* ========================================
+TEXT INPUTS
+======================================== */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+input[type="search"] {
+  font-family: var(--zui-font-family);
+  font-size: var(--zui-font-size-md);
+  line-height: var(--zui-line-height-normal);
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 3.5rem;
+
+  /* Spacing for Floating Label effect */
+  padding-inline: var(--zui-space-md);
+  padding-block: var(--zui-space-md);
+  padding-top: calc(var(--zui-space-md) * 1.5);
+
+  /* Border & Background */
+  border: 1px solid var(--zui-color-outline);
+  border-radius: var(--zui-radius-sm);
+  background-color: var(--zui-color-surface);
+  color: var(--zui-color-text-primary);
+
+  /* Transitions */
+  transition:
+    border-color var(--zui-motion-duration-normal) ease,
+    background-color var(--zui-motion-duration-normal) ease,
+    box-shadow var(--zui-motion-duration-normal) ease,
+    padding var(--zui-motion-duration-normal) ease;
+
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+
+  /* ========================================
+  FLOATING LABEL (Using Placeholder)
+  ======================================== */
+  &::placeholder {
+    color: var(--zui-color-text-placeholder);
+    transition: all var(--zui-motion-duration-normal) ease;
+    transform-origin: top left;
+    position: relative;
+    inset-block-start: 0;
+  }
+
+  /* Move label up on Focus OR when content exists */
+  &:focus::placeholder,
+  &:not(:placeholder-shown)::placeholder {
+    transform: scale(0.75) translateY(-1.2rem);
+    color: var(--zui-color-primary);
+    opacity: 1;
+  }
+
+  /* ========================================
+  STATES
+  ======================================== */
+  &:hover:not(:disabled):not(:focus) {
+    border-color: var(--zui-color-text-primary);
+    background-color: var(--zui-state-layer-hover);
+  }
+
+  &:focus-visible {
+    border-color: var(--zui-color-primary);
+    border-width: 2px;
+    padding-inline: calc(var(--zui-space-md) - 1px); /* Compensate border */
+    padding-top: calc((var(--zui-space-md) * 1.5) - 1px);
+  }
+
+  &:disabled,
+  &[disabled] {
+    background-color: var(--zui-state-layer-disabled);
+    border-color: var(--zui-color-outline-variant);
+    color: var(--zui-color-text-disabled);
+    cursor: not-allowed;
+    pointer-events: none;
+    &::placeholder {
+      color: var(--zui-color-text-disabled);
+    }
+  }
+
+  /* Error State */
+  &.error,
+  &[data-state="error"] {
+    border-color: var(--zui-color-error);
+    &::placeholder {
+      color: var(--zui-color-error);
+    }
+  }
+
+  /* Success State */
+  &.success,
+  &[data-state="success"] {
+    border-color: var(--zui-color-primary);
+  }
+
+  /* ========================================
+  VARIANTS
+  ======================================== */
+  /* Filled Variant (Background color) */
+  &.filled {
+    background-color: var(--zui-color-surface-variant);
+    border: none;
+    border-bottom: 2px solid var(--zui-color-outline);
+    border-radius: var(--zui-radius-sm) var(--zui-radius-sm) 0 0;
+    padding-top: calc(var(--zui-space-md) * 1.2);
+
+    &:hover:not(:disabled):not(:focus) {
+      background-color: var(--zui-state-layer-hover);
+      border-bottom-color: var(--zui-color-text-primary);
+    }
+
+    &:focus-visible {
+      border-bottom-color: var(--zui-color-primary);
+      box-shadow: none;
+      padding-inline: var(--zui-space-md);
+      padding-top: calc(var(--zui-space-md) * 1.2);
+    }
+
+    &::placeholder {
+      /* Adjust label position for filled */
+      &:focus,
+      &:not(:placeholder-shown) {
+        transform: scale(0.75) translateY(-1rem);
+      }
+    }
+  }
+
+  /* Underlined Variant (Minimal) */
+  &.underlined {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--zui-color-outline);
+    border-radius: 0;
+    padding-inline: 0;
+    padding-top: var(--zui-space-md);
+
+    &:hover:not(:disabled):not(:focus) {
+      border-bottom-color: var(--zui-color-text-primary);
+    }
+
+    &:focus-visible {
+      border-bottom-color: var(--zui-color-primary);
+      border-bottom-width: 2px;
+      box-shadow: none;
+      padding-top: calc(var(--zui-space-md) - 0.5px);
+    }
+
+    &::placeholder {
+      &:focus,
+      &:not(:placeholder-shown) {
+        transform: scale(0.75) translateY(-1rem);
+      }
+    }
+  }
+
+  /* Secondary Color Variant */
+  &.secondary {
+    &:focus-visible {
+      border-color: var(--zui-color-secondary);
+    }
+    &::placeholder {
+      &:focus,
+      &:not(:placeholder-shown) {
+        color: var(--zui-color-secondary);
+      }
+    }
+  }
+}
+
+/* ========================================
+SEARCH INPUT SPECIFIC
+======================================== */
+input[type="search"] {
+  /* Add Search Icon via CSS */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%2379747e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.3-4.3'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left 1rem center;
+  background-size: 1.25rem;
+
+  /* Ensure enough padding so text doesn't overlap icon */
+  padding-inline-start: 2.75rem !important;
+  padding-inline-end: var(--zui-space-md);
+
+  /* Remove default clear button */
+  &::-webkit-search-cancel-button {
+    appearance: none;
+    cursor: pointer;
+    width: 1rem;
+    height: 1rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2379747e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'/%3E%3Cline x1='6' y1='6' x2='18' y2='18'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &.filled {
+    padding-inline-start: 2.75rem !important;
+  }
+
+  &.underlined {
+    padding-inline-start: 2.75rem !important;
+  }
+
+  &:focus-visible {
+    padding-inline-start: 2.75rem !important;
+  }
+}
+
+/* ========================================
+NUMBER INPUT SPECIFIC
+======================================== */
+input[type="number"] {
+  /* Remove spin buttons */
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  /* Show spin buttons on hover/focus */
+  &:hover::-webkit-inner-spin-button,
+  &:hover::-webkit-outer-spin-button,
+  &:focus::-webkit-inner-spin-button,
+  &:focus::-webkit-outer-spin-button {
+    opacity: 1;
+  }
+
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+/* ========================================
+INPUT GROUP & HELPER TEXT
+======================================== */
+.input-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--zui-space-xs);
+}
+
+.helper-text {
+  font-size: var(--zui-font-size-sm);
+  color: var(--zui-color-text-secondary);
+  padding-inline: var(--zui-space-sm);
+  min-height: 1.25rem;
+  transition: color var(--zui-motion-duration-normal) ease;
+
+  &.error {
+    color: var(--zui-color-error);
+  }
+
+  &.success {
+    color: var(--zui-color-primary);
+  }
+
+  &.disabled {
+    color: var(--zui-color-text-disabled);
+  }
+}
+
+/* ========================================
 FILE INPUT
 ======================================== */
 input[type="file"] {

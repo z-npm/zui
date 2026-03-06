@@ -94,6 +94,7 @@ function hello() {
                   type="text"
                   id="text-input"
                   name="text-input"
+                  class="filled secondary"
                   placeholder="Enter text"
                 />
               </div>
@@ -103,6 +104,7 @@ function hello() {
                   type="email"
                   id="email-input"
                   name="email-input"
+                  class="underlined secondary"
                   placeholder="name@example.com"
                 />
               </div>
@@ -112,6 +114,7 @@ function hello() {
                   type="password"
                   id="password-input"
                   name="password-input"
+                  class="secondary"
                   placeholder="••••••••"
                 />
               </div>
@@ -126,6 +129,23 @@ function hello() {
                   step="1"
                   value="5"
                 />
+              </div>
+              <!-- Error State -->
+              <div class="input-group">
+                <input type="text" class="error" placeholder="Username" />
+                <span class="helper-text error">Username is required</span>
+              </div>
+
+              <!-- Success State -->
+              <div class="input-group">
+                <input type="email" class="success" placeholder="Email" />
+                <span class="helper-text success">Valid email address</span>
+              </div>
+
+              <!-- Normal Helper Text -->
+              <div class="input-group">
+                <input type="text" placeholder="Password" />
+                <span class="helper-text">Must be at least 8 characters</span>
               </div>
               <div>
                 <label for="tel-input">Telephone:</label>
