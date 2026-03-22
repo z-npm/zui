@@ -6,7 +6,7 @@
 
 > **property**(`options?`): \<`T`, `V`\>(`_accessor`, `context`) => `object`
 
-Defined in: [src/lib/decorators/property.ts:77](https://github.com/z-npm/zui/blob/8343ddbfb68b96e237a63bf86f35f8e5fcf64328/src/lib/decorators/property.ts#L77)
+Defined in: [src/lib/decorators/property.ts:77](https://github.com/z-npm/zui/blob/c41276f97d0b4754671fbb37aa0c8386ada4cc0f/src/lib/decorators/property.ts#L77)
 
 Accessor decorator that creates reactive properties synchronized with DOM attributes.
 
@@ -28,87 +28,7 @@ Property configuration options
 
 An accessor decorator function
 
-> \<`T`, `V`\>(`_accessor`, `context`): `object`
-
-### Type Parameters
-
-#### T
-
-`T` *extends* `HTMLElement`
-
-#### V
-
-`V` *extends* `string` \| `number` \| `boolean`
-
-### Parameters
-
-#### \_accessor
-
-##### get
-
-(`this`) => `V`
-
-##### set
-
-(`this`, `value`) => `void`
-
-#### context
-
-`ClassAccessorDecoratorContext`\<`T`, `V`\>
-
-### Returns
-
-`object`
-
-#### init()
-
-> **init**(`this`, `initialValue`): `V`
-
-##### Parameters
-
-###### this
-
-`T`
-
-###### initialValue
-
-`V`
-
-##### Returns
-
-`V`
-
-#### get()
-
-> **get**: (`this`) => `V`
-
-##### Parameters
-
-###### this
-
-`T`
-
-##### Returns
-
-`V`
-
-#### set()
-
-> **set**: (`this`, `value`) => `void`
-
-##### Parameters
-
-###### this
-
-`T`
-
-###### value
-
-`V`
-
-##### Returns
-
-`void`
+\<`T`, `V`\>(`_accessor`, `context`) => `object`
 
 ## Example
 

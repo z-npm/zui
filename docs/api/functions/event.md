@@ -6,7 +6,7 @@
 
 > **event**(`options?`): \<`T`, `V`\>(`_target`, `context`) => `void`
 
-Defined in: [src/lib/decorators/event.ts:64](https://github.com/z-npm/zui/blob/8343ddbfb68b96e237a63bf86f35f8e5fcf64328/src/lib/decorators/event.ts#L64)
+Defined in: [src/lib/decorators/event.ts:64](https://github.com/z-npm/zui/blob/c41276f97d0b4754671fbb37aa0c8386ada4cc0f/src/lib/decorators/event.ts#L64)
 
 Field decorator that creates a typed EventEmitter instance for dispatching custom events.
 
@@ -28,31 +28,7 @@ Event configuration options
 
 A field decorator function
 
-> \<`T`, `V`\>(`_target`, `context`): `void`
-
-### Type Parameters
-
-#### T
-
-`T` *extends* `HTMLElement`
-
-#### V
-
-`V`
-
-### Parameters
-
-#### \_target
-
-`undefined`
-
-#### context
-
-`ClassFieldDecoratorContext`\<`T`, [`EventEmitter`](../classes/EventEmitter.md)\<`V`\>\>
-
-### Returns
-
-`void`
+\<`T`, `V`\>(`_target`, `context`) => `void`
 
 ## Example
 

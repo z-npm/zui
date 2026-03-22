@@ -1,0 +1,12 @@
+.target {
+  border: 2px dashed var(--zui-color-outline-variant);
+  border-radius: var(--zui-radius-md);
+  padding: var(--zui-space-lg);
+  background: var(--zui-color-surface);
+  transition: all var(--zui-motion-duration-normal) ease;
+
+  // &:hover {
+  //   border-color: var(--zui-color-primary);
+  //   background: var(--zui-state-layer-hover);
+  // }
+}

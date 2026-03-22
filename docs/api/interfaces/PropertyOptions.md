@@ -4,7 +4,7 @@
 
 # Interface: PropertyOptions
 
-Defined in: [src/lib/decorators/property.ts:35](https://github.com/z-npm/zui/blob/8343ddbfb68b96e237a63bf86f35f8e5fcf64328/src/lib/decorators/property.ts#L35)
+Defined in: [src/lib/decorators/property.ts:35](https://github.com/z-npm/zui/blob/c41276f97d0b4754671fbb37aa0c8386ada4cc0f/src/lib/decorators/property.ts#L35)
 
 Configuration options for the
 
@@ -19,9 +19,9 @@ accessor count = 0;
 
 ### type?
 
-> `optional` **type**: [`PropertyType`](../type-aliases/PropertyType.md)
+> `optional` **type?**: [`PropertyType`](../type-aliases/PropertyType.md)
 
-Defined in: [src/lib/decorators/property.ts:36](https://github.com/z-npm/zui/blob/8343ddbfb68b96e237a63bf86f35f8e5fcf64328/src/lib/decorators/property.ts#L36)
+Defined in: [src/lib/decorators/property.ts:36](https://github.com/z-npm/zui/blob/c41276f97d0b4754671fbb37aa0c8386ada4cc0f/src/lib/decorators/property.ts#L36)
 
 Type of the property for attribute conversion
 
@@ -29,9 +29,9 @@ Type of the property for attribute conversion
 
 ### name?
 
-> `optional` **name**: `string`
+> `optional` **name?**: `string`
 
-Defined in: [src/lib/decorators/property.ts:37](https://github.com/z-npm/zui/blob/8343ddbfb68b96e237a63bf86f35f8e5fcf64328/src/lib/decorators/property.ts#L37)
+Defined in: [src/lib/decorators/property.ts:37](https://github.com/z-npm/zui/blob/c41276f97d0b4754671fbb37aa0c8386ada4cc0f/src/lib/decorators/property.ts#L37)
 
 Custom attribute name (defaults to kebab-case of property name)
 
@@ -39,8 +39,8 @@ Custom attribute name (defaults to kebab-case of property name)
 
 ### callbackName?
 
-> `optional` **callbackName**: `` `${string}Update` `` \| `` `${string}Changed` ``
+> `optional` **callbackName?**: `` `${string}Update` `` \| `` `${string}Changed` ``
 
-Defined in: [src/lib/decorators/property.ts:38](https://github.com/z-npm/zui/blob/8343ddbfb68b96e237a63bf86f35f8e5fcf64328/src/lib/decorators/property.ts#L38)
+Defined in: [src/lib/decorators/property.ts:38](https://github.com/z-npm/zui/blob/c41276f97d0b4754671fbb37aa0c8386ada4cc0f/src/lib/decorators/property.ts#L38)
 
 Custom update callback method name

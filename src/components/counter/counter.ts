@@ -1,9 +1,16 @@
-import { Fetcher } from "@o.z/utils";
-import { defineElement, event, property, ref, EventEmitter, Zui, state } from "../../lib"
-import { fetch } from "../../lib/decorators/fetch";
+import { Fetcher } from "@o.z/utils"
+import {
+  defineElement,
+  event,
+  property,
+  ref,
+  EventEmitter,
+  Zui,
+  state,
+} from "../../lib"
+import { fetch } from "../../lib/decorators/fetch"
 import htmlStr from "./counter.html?raw"
 import cssStr from "./counter.scss?inline"
-
 
 export type CounterClickEvent = { count: number; e?: MouseEvent }
 
@@ -11,7 +18,7 @@ export type CounterClickEvent = { count: number; e?: MouseEvent }
   tagName: "my-counter",
   html: htmlStr,
   css: cssStr,
-  options: { extends: 'div' }
+  options: { extends: "div" },
 })
 export class Counter extends Zui(HTMLDivElement) {
   @property()
@@ -45,13 +52,13 @@ export class Counter extends Zui(HTMLDivElement) {
     autoRefetch: false,
     url: "https://jsonplaceholder.typicode.com/users",
     onError(error) {
-      console.log("e:", error);
+      console.log("e:", error)
     },
     onSuccess(result) {
-      console.log("r:", result);
+      console.log("r:", result)
     },
     onLoadingChange(isLoading) {
-      console.log("l:", isLoading);
+      console.log("l:", isLoading)
     },
   })
   users!: Fetcher<any>
@@ -61,7 +68,7 @@ export class Counter extends Zui(HTMLDivElement) {
 
     setTimeout(() => {
       this.users.reFetch()
-    }, 3000);
+    }, 3000)
   }
 
   connected() {
@@ -86,7 +93,7 @@ export class Counter extends Zui(HTMLDivElement) {
     this.counterRef.innerHTML = newCount.toString()
   }
 
-  //Typescript should give error for below function becase of type(shoild be boolien) 
+  //Typescript should give error for below function becase of type(shoild be boolien)
   // isGoodUpdate(o: string, n: string) { }
 
   historyUpdate(newHist: number[]) {
@@ -94,7 +101,6 @@ export class Counter extends Zui(HTMLDivElement) {
   }
 
   attributeChanged(attributeName: string, oldValue: string, newValue: string) {
-    console.log(attributeName, oldValue, newValue);
+    console.log(attributeName, oldValue, newValue)
   }
 }
-

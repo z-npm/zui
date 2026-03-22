@@ -1,50 +1,54 @@
-import { defineConfig } from 'vitest/config'
+import { defineConfig } from "vitest/config"
 import dts from "vite-plugin-dts"
 import { libInjectCss } from "vite-plugin-lib-inject-css"
 import swc from "@o.z/vite-plugin-swc"
-import { resolve, relative, extname, dirname, basename } from 'node:path';
-import { glob } from 'glob';
-import { readFileSync, writeFileSync } from 'node:fs';
+import { resolve, relative, extname, dirname, basename } from "node:path"
+import { glob } from "glob"
+import { readFileSync, writeFileSync } from "node:fs"
 
 const scssEntries = Object.fromEntries(
-  glob.sync('src/lib/styles/**/*.{css,scss,sass}').map(file => [
-    relative('src/lib', file).slice(0, -extname(file).length),
-    resolve(__dirname, file)
-  ])
-);
+  glob
+    .sync("src/lib/styles/**/*.{css,scss,sass}")
+    .map((file) => [
+      relative("src/lib", file).slice(0, -extname(file).length),
+      resolve(__dirname, file),
+    ]),
+)
 
 const tsEntries = Object.fromEntries(
-  glob.sync('src/lib/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}', {
-    ignore: [
-      '**/_*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
-      '**/_*/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
-      '**/*.d.ts',
-      '**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
-    ]
-  }).map(file => [
-    relative('src/lib', file).replace(/\.tsx?$/, ''),
-    resolve(__dirname, file)
-  ])
-);
+  glob
+    .sync("src/lib/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}", {
+      ignore: [
+        "**/_*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}",
+        "**/_*/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}",
+        "**/*.d.ts",
+        "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}",
+      ],
+    })
+    .map((file) => [
+      relative("src/lib", file).replace(/\.tsx?$/, ""),
+      resolve(__dirname, file),
+    ]),
+)
 
 function updatePackageExports(entries: Record<string, string>) {
   return {
-    name: 'update-package-exports' as const,
-    apply: 'build' as const,
+    name: "update-package-exports" as const,
+    apply: "build" as const,
     closeBundle() {
-      const pkgPath = resolve(__dirname, 'package.json');
-      const pkg = JSON.parse(readFileSync(pkgPath, 'utf-8'));
+      const pkgPath = resolve(__dirname, "package.json")
+      const pkg = JSON.parse(readFileSync(pkgPath, "utf-8"))
 
-      const exports: Record<string, any> = {};
+      const exports: Record<string, any> = {}
 
       Object.keys(entries).forEach((key) => {
         const parentDirName = basename(dirname(entries[key]))
         const fileName = basename(key)
         let exportKey = `./${key}`
 
-        if (key === 'index' || key === 'main') {
-          exportKey = '.'
-        } else if (parentDirName !== 'lib' && fileName === 'index')
+        if (key === "index" || key === "main") {
+          exportKey = "."
+        } else if (parentDirName !== "lib" && fileName === "index")
           exportKey = `./${parentDirName}`
 
         if (exportKey === ".") {
@@ -57,14 +61,14 @@ function updatePackageExports(entries: Record<string, string>) {
           types: `./dist/${key}.d.ts`,
           import: `./dist/${key}.js`,
           require: `./dist/${key}.cjs`,
-        };
-      });
+        }
+      })
 
-      pkg.exports = exports;
-      writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n');
-      console.log('✅ package.json exports updated based on entries.');
+      pkg.exports = exports
+      writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + "\n")
+      console.log("✅ package.json exports updated based on entries.")
     },
-  };
+  }
 }
 
 export default defineConfig({
@@ -79,7 +83,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         ...tsEntries,
-        ...scssEntries
+        ...scssEntries,
       },
       output: [
         {
@@ -102,10 +106,10 @@ export default defineConfig({
       exclude: [
         "src/main.ts",
         "src/test/setup.ts",
-        '**/_*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
-        '**/_*/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
-        '**/*.d.ts',
-        '**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
+        "**/_*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}",
+        "**/_*/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}",
+        "**/*.d.ts",
+        "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}",
       ],
       include: ["src/lib/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
       rollupTypes: false,
@@ -115,17 +119,15 @@ export default defineConfig({
     updatePackageExports(tsEntries),
   ],
   test: {
-    reporters: ['verbose'],
+    reporters: ["verbose"],
     globals: true,
-    environment: 'jsdom',
-    setupFiles: './src/test/setup.ts',
-    include: [
-      'src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'
-    ],
+    environment: "jsdom",
+    setupFiles: "./src/test/setup.ts",
+    include: ["src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     coverage: {
-      provider: 'v8',
-      reporter: ['text', 'json', 'html'],
-      include: ['src/lib/**/*.ts'],
+      provider: "v8",
+      reporter: ["text", "json", "html"],
+      include: ["src/lib/**/*.ts"],
     },
   },
   worker: {
@@ -133,6 +135,5 @@ export default defineConfig({
     plugins() {
       return [swc()]
     },
-  }
+  },
 })
-

@@ -1,6 +1,5 @@
 import "./lib/styles/style.scss"
-
-// import "./components"
+import "./components/playground"
 // import { Counter } from "./components"
 //
 // const appRef = document.querySelector<HTMLDivElement>("#app")!

@@ -4,7 +4,7 @@
 
 # Interface: ZuiComponent
 
-Defined in: [src/lib/decorators/types.ts:48](https://github.com/z-npm/zui/blob/8343ddbfb68b96e237a63bf86f35f8e5fcf64328/src/lib/decorators/types.ts#L48)
+Defined in: [src/lib/decorators/types.ts:48](https://github.com/z-npm/zui/blob/c41276f97d0b4754671fbb37aa0c8386ada4cc0f/src/lib/decorators/types.ts#L48)
 
 Base interface for all ZUI components.
 Extends HTMLElement with optional lifecycle methods.
@@ -17,7 +17,7 @@ Extends HTMLElement with optional lifecycle methods.
 
 ## Indexable
 
-\[`key`: `string`\]: `any`
+> \[`key`: `string`\]: `any`
 
 Index signature for dynamic properties
 
@@ -929,7 +929,7 @@ The **`Element.namespaceURI`** read-only property returns the namespace URI of t
 
 ### onfullscreenchange
 
-> **onfullscreenchange**: (`this`, `ev`) => `any` \| `null`
+> **onfullscreenchange**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:10776
 
@@ -943,7 +943,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:10776
 
 ### onfullscreenerror
 
-> **onfullscreenerror**: (`this`, `ev`) => `any` \| `null`
+> **onfullscreenerror**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:10778
 
@@ -1187,7 +1187,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:11131
 
 ### onabort
 
-> **onabort**: (`this`, `ev`) => `any` \| `null`
+> **onabort**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12743
 
@@ -1201,7 +1201,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12743
 
 ### onanimationcancel
 
-> **onanimationcancel**: (`this`, `ev`) => `any` \| `null`
+> **onanimationcancel**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12745
 
@@ -1215,7 +1215,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12745
 
 ### onanimationend
 
-> **onanimationend**: (`this`, `ev`) => `any` \| `null`
+> **onanimationend**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12747
 
@@ -1229,7 +1229,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12747
 
 ### onanimationiteration
 
-> **onanimationiteration**: (`this`, `ev`) => `any` \| `null`
+> **onanimationiteration**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12749
 
@@ -1243,7 +1243,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12749
 
 ### onanimationstart
 
-> **onanimationstart**: (`this`, `ev`) => `any` \| `null`
+> **onanimationstart**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12751
 
@@ -1257,7 +1257,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12751
 
 ### onauxclick
 
-> **onauxclick**: (`this`, `ev`) => `any` \| `null`
+> **onauxclick**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12753
 
@@ -1271,7 +1271,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12753
 
 ### onbeforeinput
 
-> **onbeforeinput**: (`this`, `ev`) => `any` \| `null`
+> **onbeforeinput**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12755
 
@@ -1285,7 +1285,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12755
 
 ### onbeforematch
 
-> **onbeforematch**: (`this`, `ev`) => `any` \| `null`
+> **onbeforematch**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12757
 
@@ -1299,7 +1299,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12757
 
 ### onbeforetoggle
 
-> **onbeforetoggle**: (`this`, `ev`) => `any` \| `null`
+> **onbeforetoggle**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12759
 
@@ -1313,7 +1313,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12759
 
 ### onblur
 
-> **onblur**: (`this`, `ev`) => `any` \| `null`
+> **onblur**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12761
 
@@ -1327,7 +1327,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12761
 
 ### oncancel
 
-> **oncancel**: (`this`, `ev`) => `any` \| `null`
+> **oncancel**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12763
 
@@ -1341,7 +1341,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12763
 
 ### oncanplay
 
-> **oncanplay**: (`this`, `ev`) => `any` \| `null`
+> **oncanplay**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12765
 
@@ -1355,7 +1355,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12765
 
 ### oncanplaythrough
 
-> **oncanplaythrough**: (`this`, `ev`) => `any` \| `null`
+> **oncanplaythrough**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12767
 
@@ -1369,7 +1369,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12767
 
 ### onchange
 
-> **onchange**: (`this`, `ev`) => `any` \| `null`
+> **onchange**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12769
 
@@ -1383,7 +1383,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12769
 
 ### onclick
 
-> **onclick**: (`this`, `ev`) => `any` \| `null`
+> **onclick**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12771
 
@@ -1397,7 +1397,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12771
 
 ### onclose
 
-> **onclose**: (`this`, `ev`) => `any` \| `null`
+> **onclose**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12773
 
@@ -1411,7 +1411,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12773
 
 ### oncontextlost
 
-> **oncontextlost**: (`this`, `ev`) => `any` \| `null`
+> **oncontextlost**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12775
 
@@ -1425,7 +1425,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12775
 
 ### oncontextmenu
 
-> **oncontextmenu**: (`this`, `ev`) => `any` \| `null`
+> **oncontextmenu**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12777
 
@@ -1439,7 +1439,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12777
 
 ### oncontextrestored
 
-> **oncontextrestored**: (`this`, `ev`) => `any` \| `null`
+> **oncontextrestored**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12779
 
@@ -1453,7 +1453,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12779
 
 ### oncopy
 
-> **oncopy**: (`this`, `ev`) => `any` \| `null`
+> **oncopy**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12781
 
@@ -1467,7 +1467,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12781
 
 ### oncuechange
 
-> **oncuechange**: (`this`, `ev`) => `any` \| `null`
+> **oncuechange**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12783
 
@@ -1481,7 +1481,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12783
 
 ### oncut
 
-> **oncut**: (`this`, `ev`) => `any` \| `null`
+> **oncut**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12785
 
@@ -1495,7 +1495,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12785
 
 ### ondblclick
 
-> **ondblclick**: (`this`, `ev`) => `any` \| `null`
+> **ondblclick**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12787
 
@@ -1509,7 +1509,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12787
 
 ### ondrag
 
-> **ondrag**: (`this`, `ev`) => `any` \| `null`
+> **ondrag**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12789
 
@@ -1523,7 +1523,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12789
 
 ### ondragend
 
-> **ondragend**: (`this`, `ev`) => `any` \| `null`
+> **ondragend**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12791
 
@@ -1537,7 +1537,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12791
 
 ### ondragenter
 
-> **ondragenter**: (`this`, `ev`) => `any` \| `null`
+> **ondragenter**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12793
 
@@ -1551,7 +1551,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12793
 
 ### ondragleave
 
-> **ondragleave**: (`this`, `ev`) => `any` \| `null`
+> **ondragleave**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12795
 
@@ -1565,7 +1565,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12795
 
 ### ondragover
 
-> **ondragover**: (`this`, `ev`) => `any` \| `null`
+> **ondragover**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12797
 
@@ -1579,7 +1579,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12797
 
 ### ondragstart
 
-> **ondragstart**: (`this`, `ev`) => `any` \| `null`
+> **ondragstart**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12799
 
@@ -1593,7 +1593,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12799
 
 ### ondrop
 
-> **ondrop**: (`this`, `ev`) => `any` \| `null`
+> **ondrop**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12801
 
@@ -1607,7 +1607,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12801
 
 ### ondurationchange
 
-> **ondurationchange**: (`this`, `ev`) => `any` \| `null`
+> **ondurationchange**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12803
 
@@ -1621,7 +1621,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12803
 
 ### onemptied
 
-> **onemptied**: (`this`, `ev`) => `any` \| `null`
+> **onemptied**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12805
 
@@ -1635,7 +1635,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12805
 
 ### onended
 
-> **onended**: (`this`, `ev`) => `any` \| `null`
+> **onended**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12807
 
@@ -1663,7 +1663,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12809
 
 ### onfocus
 
-> **onfocus**: (`this`, `ev`) => `any` \| `null`
+> **onfocus**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12811
 
@@ -1677,7 +1677,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12811
 
 ### onformdata
 
-> **onformdata**: (`this`, `ev`) => `any` \| `null`
+> **onformdata**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12813
 
@@ -1691,7 +1691,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12813
 
 ### ongotpointercapture
 
-> **ongotpointercapture**: (`this`, `ev`) => `any` \| `null`
+> **ongotpointercapture**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12815
 
@@ -1705,7 +1705,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12815
 
 ### oninput
 
-> **oninput**: (`this`, `ev`) => `any` \| `null`
+> **oninput**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12817
 
@@ -1719,7 +1719,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12817
 
 ### oninvalid
 
-> **oninvalid**: (`this`, `ev`) => `any` \| `null`
+> **oninvalid**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12819
 
@@ -1733,7 +1733,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12819
 
 ### onkeydown
 
-> **onkeydown**: (`this`, `ev`) => `any` \| `null`
+> **onkeydown**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12821
 
@@ -1747,7 +1747,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12821
 
 ### ~~onkeypress~~
 
-> **onkeypress**: (`this`, `ev`) => `any` \| `null`
+> **onkeypress**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12827
 
@@ -1763,7 +1763,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12827
 
 ### onkeyup
 
-> **onkeyup**: (`this`, `ev`) => `any` \| `null`
+> **onkeyup**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12829
 
@@ -1777,7 +1777,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12829
 
 ### onload
 
-> **onload**: (`this`, `ev`) => `any` \| `null`
+> **onload**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12831
 
@@ -1791,7 +1791,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12831
 
 ### onloadeddata
 
-> **onloadeddata**: (`this`, `ev`) => `any` \| `null`
+> **onloadeddata**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12833
 
@@ -1805,7 +1805,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12833
 
 ### onloadedmetadata
 
-> **onloadedmetadata**: (`this`, `ev`) => `any` \| `null`
+> **onloadedmetadata**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12835
 
@@ -1819,7 +1819,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12835
 
 ### onloadstart
 
-> **onloadstart**: (`this`, `ev`) => `any` \| `null`
+> **onloadstart**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12837
 
@@ -1833,7 +1833,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12837
 
 ### onlostpointercapture
 
-> **onlostpointercapture**: (`this`, `ev`) => `any` \| `null`
+> **onlostpointercapture**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12839
 
@@ -1847,7 +1847,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12839
 
 ### onmousedown
 
-> **onmousedown**: (`this`, `ev`) => `any` \| `null`
+> **onmousedown**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12841
 
@@ -1861,7 +1861,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12841
 
 ### onmouseenter
 
-> **onmouseenter**: (`this`, `ev`) => `any` \| `null`
+> **onmouseenter**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12843
 
@@ -1875,7 +1875,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12843
 
 ### onmouseleave
 
-> **onmouseleave**: (`this`, `ev`) => `any` \| `null`
+> **onmouseleave**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12845
 
@@ -1889,7 +1889,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12845
 
 ### onmousemove
 
-> **onmousemove**: (`this`, `ev`) => `any` \| `null`
+> **onmousemove**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12847
 
@@ -1903,7 +1903,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12847
 
 ### onmouseout
 
-> **onmouseout**: (`this`, `ev`) => `any` \| `null`
+> **onmouseout**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12849
 
@@ -1917,7 +1917,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12849
 
 ### onmouseover
 
-> **onmouseover**: (`this`, `ev`) => `any` \| `null`
+> **onmouseover**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12851
 
@@ -1931,7 +1931,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12851
 
 ### onmouseup
 
-> **onmouseup**: (`this`, `ev`) => `any` \| `null`
+> **onmouseup**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12853
 
@@ -1945,7 +1945,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12853
 
 ### onpaste
 
-> **onpaste**: (`this`, `ev`) => `any` \| `null`
+> **onpaste**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12855
 
@@ -1959,7 +1959,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12855
 
 ### onpause
 
-> **onpause**: (`this`, `ev`) => `any` \| `null`
+> **onpause**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12857
 
@@ -1973,7 +1973,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12857
 
 ### onplay
 
-> **onplay**: (`this`, `ev`) => `any` \| `null`
+> **onplay**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12859
 
@@ -1987,7 +1987,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12859
 
 ### onplaying
 
-> **onplaying**: (`this`, `ev`) => `any` \| `null`
+> **onplaying**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12861
 
@@ -2001,7 +2001,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12861
 
 ### onpointercancel
 
-> **onpointercancel**: (`this`, `ev`) => `any` \| `null`
+> **onpointercancel**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12863
 
@@ -2015,7 +2015,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12863
 
 ### onpointerdown
 
-> **onpointerdown**: (`this`, `ev`) => `any` \| `null`
+> **onpointerdown**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12865
 
@@ -2029,7 +2029,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12865
 
 ### onpointerenter
 
-> **onpointerenter**: (`this`, `ev`) => `any` \| `null`
+> **onpointerenter**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12867
 
@@ -2043,7 +2043,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12867
 
 ### onpointerleave
 
-> **onpointerleave**: (`this`, `ev`) => `any` \| `null`
+> **onpointerleave**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12869
 
@@ -2057,7 +2057,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12869
 
 ### onpointermove
 
-> **onpointermove**: (`this`, `ev`) => `any` \| `null`
+> **onpointermove**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12871
 
@@ -2071,7 +2071,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12871
 
 ### onpointerout
 
-> **onpointerout**: (`this`, `ev`) => `any` \| `null`
+> **onpointerout**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12873
 
@@ -2085,7 +2085,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12873
 
 ### onpointerover
 
-> **onpointerover**: (`this`, `ev`) => `any` \| `null`
+> **onpointerover**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12875
 
@@ -2099,7 +2099,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12875
 
 ### onpointerrawupdate
 
-> **onpointerrawupdate**: (`this`, `ev`) => `any` \| `null`
+> **onpointerrawupdate**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12881
 
@@ -2115,7 +2115,7 @@ Available only in secure contexts.
 
 ### onpointerup
 
-> **onpointerup**: (`this`, `ev`) => `any` \| `null`
+> **onpointerup**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12883
 
@@ -2129,7 +2129,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12883
 
 ### onprogress
 
-> **onprogress**: (`this`, `ev`) => `any` \| `null`
+> **onprogress**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12885
 
@@ -2143,7 +2143,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12885
 
 ### onratechange
 
-> **onratechange**: (`this`, `ev`) => `any` \| `null`
+> **onratechange**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12887
 
@@ -2157,7 +2157,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12887
 
 ### onreset
 
-> **onreset**: (`this`, `ev`) => `any` \| `null`
+> **onreset**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12889
 
@@ -2171,7 +2171,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12889
 
 ### onresize
 
-> **onresize**: (`this`, `ev`) => `any` \| `null`
+> **onresize**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12891
 
@@ -2185,7 +2185,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12891
 
 ### onscroll
 
-> **onscroll**: (`this`, `ev`) => `any` \| `null`
+> **onscroll**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12893
 
@@ -2199,7 +2199,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12893
 
 ### onscrollend
 
-> **onscrollend**: (`this`, `ev`) => `any` \| `null`
+> **onscrollend**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12895
 
@@ -2213,7 +2213,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12895
 
 ### onsecuritypolicyviolation
 
-> **onsecuritypolicyviolation**: (`this`, `ev`) => `any` \| `null`
+> **onsecuritypolicyviolation**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12897
 
@@ -2227,7 +2227,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12897
 
 ### onseeked
 
-> **onseeked**: (`this`, `ev`) => `any` \| `null`
+> **onseeked**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12899
 
@@ -2241,7 +2241,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12899
 
 ### onseeking
 
-> **onseeking**: (`this`, `ev`) => `any` \| `null`
+> **onseeking**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12901
 
@@ -2255,7 +2255,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12901
 
 ### onselect
 
-> **onselect**: (`this`, `ev`) => `any` \| `null`
+> **onselect**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12903
 
@@ -2269,7 +2269,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12903
 
 ### onselectionchange
 
-> **onselectionchange**: (`this`, `ev`) => `any` \| `null`
+> **onselectionchange**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12905
 
@@ -2283,7 +2283,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12905
 
 ### onselectstart
 
-> **onselectstart**: (`this`, `ev`) => `any` \| `null`
+> **onselectstart**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12907
 
@@ -2297,7 +2297,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12907
 
 ### onslotchange
 
-> **onslotchange**: (`this`, `ev`) => `any` \| `null`
+> **onslotchange**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12909
 
@@ -2311,7 +2311,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12909
 
 ### onstalled
 
-> **onstalled**: (`this`, `ev`) => `any` \| `null`
+> **onstalled**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12911
 
@@ -2325,7 +2325,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12911
 
 ### onsubmit
 
-> **onsubmit**: (`this`, `ev`) => `any` \| `null`
+> **onsubmit**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12913
 
@@ -2339,7 +2339,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12913
 
 ### onsuspend
 
-> **onsuspend**: (`this`, `ev`) => `any` \| `null`
+> **onsuspend**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12915
 
@@ -2353,7 +2353,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12915
 
 ### ontimeupdate
 
-> **ontimeupdate**: (`this`, `ev`) => `any` \| `null`
+> **ontimeupdate**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12917
 
@@ -2367,7 +2367,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12917
 
 ### ontoggle
 
-> **ontoggle**: (`this`, `ev`) => `any` \| `null`
+> **ontoggle**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12919
 
@@ -2381,7 +2381,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12919
 
 ### ontouchcancel?
 
-> `optional` **ontouchcancel**: (`this`, `ev`) => `any` \| `null`
+> `optional` **ontouchcancel?**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12921
 
@@ -2395,7 +2395,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12921
 
 ### ontouchend?
 
-> `optional` **ontouchend**: (`this`, `ev`) => `any` \| `null`
+> `optional` **ontouchend?**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12923
 
@@ -2409,7 +2409,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12923
 
 ### ontouchmove?
 
-> `optional` **ontouchmove**: (`this`, `ev`) => `any` \| `null`
+> `optional` **ontouchmove?**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12925
 
@@ -2423,7 +2423,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12925
 
 ### ontouchstart?
 
-> `optional` **ontouchstart**: (`this`, `ev`) => `any` \| `null`
+> `optional` **ontouchstart?**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12927
 
@@ -2437,7 +2437,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12927
 
 ### ontransitioncancel
 
-> **ontransitioncancel**: (`this`, `ev`) => `any` \| `null`
+> **ontransitioncancel**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12929
 
@@ -2451,7 +2451,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12929
 
 ### ontransitionend
 
-> **ontransitionend**: (`this`, `ev`) => `any` \| `null`
+> **ontransitionend**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12931
 
@@ -2465,7 +2465,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12931
 
 ### ontransitionrun
 
-> **ontransitionrun**: (`this`, `ev`) => `any` \| `null`
+> **ontransitionrun**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12933
 
@@ -2479,7 +2479,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12933
 
 ### ontransitionstart
 
-> **ontransitionstart**: (`this`, `ev`) => `any` \| `null`
+> **ontransitionstart**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12935
 
@@ -2493,7 +2493,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12935
 
 ### onvolumechange
 
-> **onvolumechange**: (`this`, `ev`) => `any` \| `null`
+> **onvolumechange**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12937
 
@@ -2507,7 +2507,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12937
 
 ### onwaiting
 
-> **onwaiting**: (`this`, `ev`) => `any` \| `null`
+> **onwaiting**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12939
 
@@ -2521,7 +2521,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12939
 
 ### ~~onwebkitanimationend~~
 
-> **onwebkitanimationend**: (`this`, `ev`) => `any` \| `null`
+> **onwebkitanimationend**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12945
 
@@ -2539,7 +2539,7 @@ This is a legacy alias of `onanimationend`.
 
 ### ~~onwebkitanimationiteration~~
 
-> **onwebkitanimationiteration**: (`this`, `ev`) => `any` \| `null`
+> **onwebkitanimationiteration**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12951
 
@@ -2557,7 +2557,7 @@ This is a legacy alias of `onanimationiteration`.
 
 ### ~~onwebkitanimationstart~~
 
-> **onwebkitanimationstart**: (`this`, `ev`) => `any` \| `null`
+> **onwebkitanimationstart**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12957
 
@@ -2575,7 +2575,7 @@ This is a legacy alias of `onanimationstart`.
 
 ### ~~onwebkittransitionend~~
 
-> **onwebkittransitionend**: (`this`, `ev`) => `any` \| `null`
+> **onwebkittransitionend**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12963
 
@@ -2593,7 +2593,7 @@ This is a legacy alias of `ontransitionend`.
 
 ### onwheel
 
-> **onwheel**: (`this`, `ev`) => `any` \| `null`
+> **onwheel**: ((`this`, `ev`) => `any`) \| `null`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:12965
 
@@ -2971,7 +2971,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:16067
 
 ### nonce?
 
-> `optional` **nonce**: `string`
+> `optional` **nonce?**: `string`
 
 Defined in: node\_modules/typescript/lib/lib.dom.d.ts:16069
 
@@ -3643,7 +3643,7 @@ The **`textContent`** property of the Node interface represents the text content
 
 ###### value
 
-`string` | `null`
+`string` \| `null`
 
 ##### Returns
 
@@ -3695,7 +3695,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:11120
 
 > `optional` **connected**(): `void`
 
-Defined in: [src/lib/decorators/types.ts:50](https://github.com/z-npm/zui/blob/8343ddbfb68b96e237a63bf86f35f8e5fcf64328/src/lib/decorators/types.ts#L50)
+Defined in: [src/lib/decorators/types.ts:50](https://github.com/z-npm/zui/blob/c41276f97d0b4754671fbb37aa0c8386ada4cc0f/src/lib/decorators/types.ts#L50)
 
 Called when element connects to DOM
 
@@ -3709,7 +3709,7 @@ Called when element connects to DOM
 
 > `optional` **disconnected**(): `void`
 
-Defined in: [src/lib/decorators/types.ts:52](https://github.com/z-npm/zui/blob/8343ddbfb68b96e237a63bf86f35f8e5fcf64328/src/lib/decorators/types.ts#L52)
+Defined in: [src/lib/decorators/types.ts:52](https://github.com/z-npm/zui/blob/c41276f97d0b4754671fbb37aa0c8386ada4cc0f/src/lib/decorators/types.ts#L52)
 
 Called when element disconnects from DOM
 
@@ -3723,7 +3723,7 @@ Called when element disconnects from DOM
 
 > `optional` **attributeChanged**(`attributeName`, `oldValue`, `newValue`): `void`
 
-Defined in: [src/lib/decorators/types.ts:54](https://github.com/z-npm/zui/blob/8343ddbfb68b96e237a63bf86f35f8e5fcf64328/src/lib/decorators/types.ts#L54)
+Defined in: [src/lib/decorators/types.ts:54](https://github.com/z-npm/zui/blob/c41276f97d0b4754671fbb37aa0c8386ada4cc0f/src/lib/decorators/types.ts#L54)
 
 Called when observed attribute changes
 
@@ -3759,11 +3759,11 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:2921
 
 ##### keyframes
 
-`Keyframe`[] | `PropertyIndexedKeyframes` | `null`
+`Keyframe`[] \| `PropertyIndexedKeyframes` \| `null`
 
 ##### options?
 
-`number` | `KeyframeAnimationOptions`
+`number` \| `KeyframeAnimationOptions`
 
 #### Returns
 
@@ -4127,7 +4127,7 @@ The **`getAttributeNS()`** method of the Element interface returns the string va
 
 ##### namespace
 
-`string` | `null`
+`string` \| `null`
 
 ##### localName
 
@@ -4203,7 +4203,7 @@ The **`getAttributeNodeNS()`** method of the Element interface returns the names
 
 ##### namespace
 
-`string` | `null`
+`string` \| `null`
 
 ##### localName
 
@@ -4507,7 +4507,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:10935
 
 ###### namespace
 
-`string` | `null`
+`string` \| `null`
 
 ###### localName
 
@@ -4589,7 +4589,7 @@ The **`hasAttributeNS()`** method of the Element interface returns a boolean val
 
 ##### namespace
 
-`string` | `null`
+`string` \| `null`
 
 ##### localName
 
@@ -4833,7 +4833,7 @@ The **`removeAttributeNS()`** method of the If you are working with HTML and you
 
 ##### namespace
 
-`string` | `null`
+`string` \| `null`
 
 ##### localName
 
@@ -5045,7 +5045,7 @@ The Element interface's **`scrollIntoView()`** method scrolls the element's ance
 
 ##### arg?
 
-`boolean` | `ScrollIntoViewOptions`
+`boolean` \| `ScrollIntoViewOptions`
 
 #### Returns
 
@@ -5153,7 +5153,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:11064
 
 ##### namespace
 
-`string` | `null`
+`string` \| `null`
 
 ##### qualifiedName
 
@@ -5519,7 +5519,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:13839
 
 ###### options?
 
-`boolean` | `AddEventListenerOptions`
+`boolean` \| `AddEventListenerOptions`
 
 ##### Returns
 
@@ -5547,7 +5547,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:13840
 
 ###### options?
 
-`boolean` | `AddEventListenerOptions`
+`boolean` \| `AddEventListenerOptions`
 
 ##### Returns
 
@@ -5585,7 +5585,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:13841
 
 ###### options?
 
-`boolean` | `EventListenerOptions`
+`boolean` \| `EventListenerOptions`
 
 ##### Returns
 
@@ -5613,7 +5613,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:13842
 
 ###### options?
 
-`boolean` | `EventListenerOptions`
+`boolean` \| `EventListenerOptions`
 
 ##### Returns
 
@@ -5765,7 +5765,7 @@ The **`contains()`** method of the Node interface returns a boolean value indica
 
 ##### other
 
-`Node` | `null`
+`Node` \| `null`
 
 #### Returns
 
@@ -5847,7 +5847,7 @@ The **`insertBefore()`** method of the Node interface inserts a node before a _r
 
 ##### child
 
-`Node` | `null`
+`Node` \| `null`
 
 #### Returns
 
@@ -5873,7 +5873,7 @@ The **`isDefaultNamespace()`** method of the Node interface accepts a namespace 
 
 ##### namespace
 
-`string` | `null`
+`string` \| `null`
 
 #### Returns
 
@@ -5899,7 +5899,7 @@ The **`isEqualNode()`** method of the Node interface tests whether two nodes are
 
 ##### otherNode
 
-`Node` | `null`
+`Node` \| `null`
 
 #### Returns
 
@@ -5925,7 +5925,7 @@ The **`isSameNode()`** method of the Node interface is a legacy alias the for th
 
 ##### otherNode
 
-`Node` | `null`
+`Node` \| `null`
 
 #### Returns
 
@@ -5951,7 +5951,7 @@ The **`lookupNamespaceURI()`** method of the Node interface takes a prefix as pa
 
 ##### prefix
 
-`string` | `null`
+`string` \| `null`
 
 #### Returns
 
@@ -5977,7 +5977,7 @@ The **`lookupPrefix()`** method of the Node interface returns a string containin
 
 ##### namespace
 
-`string` | `null`
+`string` \| `null`
 
 #### Returns
 

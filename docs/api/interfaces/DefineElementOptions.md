@@ -4,21 +4,20 @@
 
 # Interface: DefineElementOptions
 
-Defined in: [src/lib/decorators/defineElement.ts:36](https://github.com/z-npm/zui/blob/8343ddbfb68b96e237a63bf86f35f8e5fcf64328/src/lib/decorators/defineElement.ts#L36)
+Defined in: [src/lib/decorators/defineElement.ts:38](https://github.com/z-npm/zui/blob/c41276f97d0b4754671fbb37aa0c8386ada4cc0f/src/lib/decorators/defineElement.ts#L38)
 
 Configuration options for defining a custom element.
-
- DefineElementOptions
 
 ## Example
 
 ```ts
-@defineElement({
+const options = {
   tagName: 'my-counter',
-  html: '<div>Count: <span class="count"></span></div>',
+  html: '<div>Count: </div>',
   css: ':host { display: block; }',
-  options: { extends: 'div' }
-})
+  options: { extends: 'div' },
+  shadowDom: true
+};
 ```
 
 ## Properties
@@ -27,7 +26,7 @@ Configuration options for defining a custom element.
 
 > **tagName**: `string`
 
-Defined in: [src/lib/decorators/defineElement.ts:37](https://github.com/z-npm/zui/blob/8343ddbfb68b96e237a63bf86f35f8e5fcf64328/src/lib/decorators/defineElement.ts#L37)
+Defined in: [src/lib/decorators/defineElement.ts:39](https://github.com/z-npm/zui/blob/c41276f97d0b4754671fbb37aa0c8386ada4cc0f/src/lib/decorators/defineElement.ts#L39)
 
 The custom element tag name (must contain hyphen, e.g., 'my-counter')
 
@@ -37,7 +36,7 @@ The custom element tag name (must contain hyphen, e.g., 'my-counter')
 
 > **html**: `string` \| `SafeHTML`
 
-Defined in: [src/lib/decorators/defineElement.ts:38](https://github.com/z-npm/zui/blob/8343ddbfb68b96e237a63bf86f35f8e5fcf64328/src/lib/decorators/defineElement.ts#L38)
+Defined in: [src/lib/decorators/defineElement.ts:40](https://github.com/z-npm/zui/blob/c41276f97d0b4754671fbb37aa0c8386ada4cc0f/src/lib/decorators/defineElement.ts#L40)
 
 HTML template string or SafeHTML object for the element's shadow DOM
 
@@ -45,9 +44,9 @@ HTML template string or SafeHTML object for the element's shadow DOM
 
 ### css?
 
-> `optional` **css**: `string`
+> `optional` **css?**: `string`
 
-Defined in: [src/lib/decorators/defineElement.ts:39](https://github.com/z-npm/zui/blob/8343ddbfb68b96e237a63bf86f35f8e5fcf64328/src/lib/decorators/defineElement.ts#L39)
+Defined in: [src/lib/decorators/defineElement.ts:41](https://github.com/z-npm/zui/blob/c41276f97d0b4754671fbb37aa0c8386ada4cc0f/src/lib/decorators/defineElement.ts#L41)
 
 Optional CSS string to inject into the shadow DOM
 
@@ -55,8 +54,18 @@ Optional CSS string to inject into the shadow DOM
 
 ### options?
 
-> `optional` **options**: `ElementDefinitionOptions`
+> `optional` **options?**: `ElementDefinitionOptions`
 
-Defined in: [src/lib/decorators/defineElement.ts:40](https://github.com/z-npm/zui/blob/8343ddbfb68b96e237a63bf86f35f8e5fcf64328/src/lib/decorators/defineElement.ts#L40)
+Defined in: [src/lib/decorators/defineElement.ts:42](https://github.com/z-npm/zui/blob/c41276f97d0b4754671fbb37aa0c8386ada4cc0f/src/lib/decorators/defineElement.ts#L42)
 
 Custom element definition options including extension support
+
+***
+
+### shadowDom?
+
+> `optional` **shadowDom?**: `boolean`
+
+Defined in: [src/lib/decorators/defineElement.ts:43](https://github.com/z-npm/zui/blob/c41276f97d0b4754671fbb37aa0c8386ada4cc0f/src/lib/decorators/defineElement.ts#L43)
+
+Whether to create a shadow DOM (default: true). If false, uses light DOM
