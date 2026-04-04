@@ -6,7 +6,7 @@
 
 > **defineElement**(`config`): \<`T`\>(`originalClass`, `context`) => `T`
 
-Defined in: [src/lib/decorators/defineElement.ts:117](https://github.com/z-npm/zui/blob/c41276f97d0b4754671fbb37aa0c8386ada4cc0f/src/lib/decorators/defineElement.ts#L117)
+Defined in: [src/lib/decorators/defineElement.ts:117](https://github.com/z-npm/zui/blob/9eb97da5fcf705679604ff6947fa10410017e48a/src/lib/decorators/defineElement.ts#L117)
 
 Class decorator that registers a custom element with the browser's Custom Elements registry.
 

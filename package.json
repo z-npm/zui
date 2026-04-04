@@ -1,6 +1,6 @@
 {
   "name": "@o.z/zui",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Next-generation Web Component framework leveraging TypeScript Stage 3 standard decorators.",
   "homepage": "https://github.com/z-npm/zui#readme",
   "docs": "https://github.com/z-npm/zui#readme",
@@ -61,24 +61,24 @@
     "test:coverage": "vitest run --coverage"
   },
   "devDependencies": {
-    "@o.z/vite-plugin-swc": "^0.6.1",
+    "@o.z/vite-plugin-swc": "^0.7.0",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/user-event": "^14.6.1",
     "@types/jsdom": "^28.0.1",
-    "@types/node": "^25.5.0",
-    "@vitest/coverage-v8": "^4.1.0",
-    "@vitest/ui": "^4.1.0",
+    "@types/node": "^25.5.2",
+    "@vitest/coverage-v8": "^4.1.2",
+    "@vitest/ui": "^4.1.2",
     "glob": "^13.0.6",
     "globals": "^17.4.0",
     "jsdom": "^29.0.1",
-    "sass": "^1.98.0",
-    "typedoc": "^0.28.17",
+    "sass": "^1.99.0",
+    "typedoc": "^0.28.18",
     "typedoc-plugin-markdown": "^4.11.0",
-    "typescript": "^5.9.3",
-    "vite": "^7.3.1",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.3",
     "vite-plugin-dts": "^4.5.4",
     "vite-plugin-lib-inject-css": "^2.2.2",
-    "vitest": "^4.1.0"
+    "vitest": "^4.1.2"
   },
   "types": "./dist/index.d.ts",
   "module": "./dist/index.js",
@@ -133,10 +133,26 @@
       "types": "./dist/decorators/defineElement.d.ts",
       "import": "./dist/decorators/defineElement.js",
       "require": "./dist/decorators/defineElement.cjs"
+    },
+    "./styles/theme": {
+      "import": "./dist/styles/theme.css",
+      "require": "./dist/styles/theme.css"
+    },
+    "./styles/style": {
+      "import": "./dist/styles/style.css",
+      "require": "./dist/styles/style.css"
+    },
+    "./styles/reset": {
+      "import": "./dist/styles/reset.css",
+      "require": "./dist/styles/reset.css"
+    },
+    "./styles/default": {
+      "import": "./dist/styles/default.css",
+      "require": "./dist/styles/default.css"
     }
   },
   "dependencies": {
-    "@o.z/utils": "^0.3.0"
+    "@o.z/utils": "^0.5.0"
   },
   "engines": {
     "node": ">=18.0.0",

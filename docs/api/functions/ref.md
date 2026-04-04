@@ -6,7 +6,7 @@
 
 > **ref**(`selector`): \<`T`, `V`\>(`_target`, `context`) => `void`
 
-Defined in: [src/lib/decorators/refs.ts:107](https://github.com/z-npm/zui/blob/c41276f97d0b4754671fbb37aa0c8386ada4cc0f/src/lib/decorators/refs.ts#L107)
+Defined in: [src/lib/decorators/refs.ts:107](https://github.com/z-npm/zui/blob/9eb97da5fcf705679604ff6947fa10410017e48a/src/lib/decorators/refs.ts#L107)
 
 Field decorator that automatically queries and assigns DOM elements from the shadow root.
 

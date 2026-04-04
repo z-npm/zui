@@ -7,41 +7,6 @@
   </head>
   <body>
     <div id="app">
-      <!-- In index.html -->
-      <zui-playground>
-        <template name="template">
-          <div class="input-group">
-            <input type="$type" class="$variant $state" placeholder="$label" />
-            <span class="helper-text $state">$helperText</span>
-          </div>
-        </template>
-
-        <div
-          name="$type"
-          data-meta='{"type":"choose","value":"text","options":[{"name":"text","value":"text"},{"name":"email","value":"email"},{"name":"password","value":"password"},{"name":"number","value":"number"},{"name":"tel","value":"tel"},{"name":"url","value":"url"},{"name":"search","value":"search"}]}'
-        ></div>
-
-        <div
-          name="$variant"
-          data-meta='{"type":"choose","value":"filled","options":[{"name":"filled","value":"filled"},{"name":"underlined","value":"underlined"},{"name":"secondary","value":"secondary"},{"name":"default","value":"default"}]}'
-        ></div>
-
-        <div
-          name="$state"
-          data-meta='{"type":"choose","value":"error","options":[{"name":"default","value":""},{"name":"error","value":"error"},{"name":"success","value":"success"}]}'
-        ></div>
-
-        <div
-          name="$label"
-          data-meta='{"type":"string","value":"Enter text"}'
-        ></div>
-
-        <div
-          name="$helperText"
-          data-meta='{"type":"string","value":":)"}'
-        ></div>
-      </zui-playground>
-
       <!-- Header with navigation -->
       <header class="test-header">
         <h1>CSS Framework Test Page</h1>

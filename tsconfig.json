@@ -3,12 +3,7 @@
     "target": "es2022",
     "useDefineForClassFields": true,
     "module": "esnext",
-    "lib": [
-      "ES2022",
-      "WebWorker",
-      "DOM",
-      "DOM.Iterable"
-    ],
+    "lib": ["ES2022", "WebWorker", "DOM", "DOM.Iterable"],
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     /* Bundler mode */
@@ -22,14 +17,14 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    "declaration": true,
+    "declarationDir": "dist",
+    "emitDeclarationOnly": false,
+    "outDir": "dist",
+    "rootDir": "src"
   },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "src/lib/styles"
-  ]
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "src/lib/styles"]
 }
