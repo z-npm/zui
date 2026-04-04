@@ -47,7 +47,7 @@ function updatePackageExports(entries: Record<string, string>) {
 
         const parentDirName = basename(dirname(sourcePath))
         const fileName = basename(key)
-        let exportKey = `./${key}`
+        let exportKey = isStyle ? `./${key}.css` : `./${key}`
 
         if (key === "index" || key === "main") {
           exportKey = "."

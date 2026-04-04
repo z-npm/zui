@@ -4,7 +4,7 @@
 
 # Interface: PropertyOptions
 
-Defined in: [src/lib/decorators/property.ts:35](https://github.com/z-npm/zui/blob/9eb97da5fcf705679604ff6947fa10410017e48a/src/lib/decorators/property.ts#L35)
+Defined in: [src/lib/decorators/property.ts:35](https://github.com/z-npm/zui/blob/476a9a1f0b0beed5843d63449d20234d11788a39/src/lib/decorators/property.ts#L35)
 
 Configuration options for the
 
@@ -21,7 +21,7 @@ accessor count = 0;
 
 > `optional` **type?**: [`PropertyType`](../type-aliases/PropertyType.md)
 
-Defined in: [src/lib/decorators/property.ts:36](https://github.com/z-npm/zui/blob/9eb97da5fcf705679604ff6947fa10410017e48a/src/lib/decorators/property.ts#L36)
+Defined in: [src/lib/decorators/property.ts:36](https://github.com/z-npm/zui/blob/476a9a1f0b0beed5843d63449d20234d11788a39/src/lib/decorators/property.ts#L36)
 
 Type of the property for attribute conversion
 
@@ -31,7 +31,7 @@ Type of the property for attribute conversion
 
 > `optional` **name?**: `string`
 
-Defined in: [src/lib/decorators/property.ts:37](https://github.com/z-npm/zui/blob/9eb97da5fcf705679604ff6947fa10410017e48a/src/lib/decorators/property.ts#L37)
+Defined in: [src/lib/decorators/property.ts:37](https://github.com/z-npm/zui/blob/476a9a1f0b0beed5843d63449d20234d11788a39/src/lib/decorators/property.ts#L37)
 
 Custom attribute name (defaults to kebab-case of property name)
 
@@ -41,6 +41,6 @@ Custom attribute name (defaults to kebab-case of property name)
 
 > `optional` **callbackName?**: `` `${string}Update` `` \| `` `${string}Changed` ``
 
-Defined in: [src/lib/decorators/property.ts:38](https://github.com/z-npm/zui/blob/9eb97da5fcf705679604ff6947fa10410017e48a/src/lib/decorators/property.ts#L38)
+Defined in: [src/lib/decorators/property.ts:38](https://github.com/z-npm/zui/blob/476a9a1f0b0beed5843d63449d20234d11788a39/src/lib/decorators/property.ts#L38)
 
 Custom update callback method name

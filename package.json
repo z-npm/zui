@@ -1,6 +1,6 @@
 {
   "name": "@o.z/zui",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Next-generation Web Component framework leveraging TypeScript Stage 3 standard decorators.",
   "homepage": "https://github.com/z-npm/zui#readme",
   "docs": "https://github.com/z-npm/zui#readme",
@@ -134,19 +134,19 @@
       "import": "./dist/decorators/defineElement.js",
       "require": "./dist/decorators/defineElement.cjs"
     },
-    "./styles/theme": {
+    "./styles/theme.css": {
       "import": "./dist/styles/theme.css",
       "require": "./dist/styles/theme.css"
     },
-    "./styles/style": {
+    "./styles/style.css": {
       "import": "./dist/styles/style.css",
       "require": "./dist/styles/style.css"
     },
-    "./styles/reset": {
+    "./styles/reset.css": {
       "import": "./dist/styles/reset.css",
       "require": "./dist/styles/reset.css"
     },
-    "./styles/default": {
+    "./styles/default.css": {
       "import": "./dist/styles/default.css",
       "require": "./dist/styles/default.css"
     }
