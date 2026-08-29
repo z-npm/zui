@@ -4,7 +4,7 @@
 
 # Interface: ZuiComponent
 
-Defined in: [src/lib/decorators/types.ts:48](https://github.com/z-npm/zui/blob/476a9a1f0b0beed5843d63449d20234d11788a39/src/lib/decorators/types.ts#L48)
+Defined in: [src/lib/decorators/types.ts:48](https://github.com/z-npm/zui/blob/84e8372d25a414a972914b586bcfe9442a8f5a55/src/lib/decorators/types.ts#L48)
 
 Base interface for all ZUI components.
 Extends HTMLElement with optional lifecycle methods.
@@ -3721,7 +3721,7 @@ Defined in: node\_modules/typescript/lib/lib.dom.d.ts:13931
 
 > `optional` **connected**(): `void`
 
-Defined in: [src/lib/decorators/types.ts:50](https://github.com/z-npm/zui/blob/476a9a1f0b0beed5843d63449d20234d11788a39/src/lib/decorators/types.ts#L50)
+Defined in: [src/lib/decorators/types.ts:50](https://github.com/z-npm/zui/blob/84e8372d25a414a972914b586bcfe9442a8f5a55/src/lib/decorators/types.ts#L50)
 
 Called when element connects to DOM
 
@@ -3735,7 +3735,7 @@ Called when element connects to DOM
 
 > `optional` **disconnected**(): `void`
 
-Defined in: [src/lib/decorators/types.ts:52](https://github.com/z-npm/zui/blob/476a9a1f0b0beed5843d63449d20234d11788a39/src/lib/decorators/types.ts#L52)
+Defined in: [src/lib/decorators/types.ts:52](https://github.com/z-npm/zui/blob/84e8372d25a414a972914b586bcfe9442a8f5a55/src/lib/decorators/types.ts#L52)
 
 Called when element disconnects from DOM
 
@@ -3749,7 +3749,7 @@ Called when element disconnects from DOM
 
 > `optional` **attributeChanged**(`attributeName`, `oldValue`, `newValue`): `void`
 
-Defined in: [src/lib/decorators/types.ts:54](https://github.com/z-npm/zui/blob/476a9a1f0b0beed5843d63449d20234d11788a39/src/lib/decorators/types.ts#L54)
+Defined in: [src/lib/decorators/types.ts:54](https://github.com/z-npm/zui/blob/84e8372d25a414a972914b586bcfe9442a8f5a55/src/lib/decorators/types.ts#L54)
 
 Called when observed attribute changes
 
